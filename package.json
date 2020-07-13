@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
+    "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate",
     "start": "nuxt start",
     "export": "nuxt export",
     "serve": "nuxt serve"
@@ -15,5 +16,7 @@
     "@nuxtjs/tailwindcss": "^2.0.0",
     "nuxt": "^2.13.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cross-env": "^7.0.2"
+  }
 }
