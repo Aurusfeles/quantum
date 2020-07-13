@@ -1,17 +1,24 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">quantum</h1>
-      <div class="links">
-        <nuxt-link to="/skills">Skill cards</nuxt-link>
-      </div>
-    </div>
+    <p
+      class="skill_card"
+      v-for="(skill,index) in skills"
+      :key="index"
+    >------{{skill["fr"]["name"]}}----------</p>
   </div>
 </template>
 
 <script>
-export default {};
+import skills from "~/assets/skills.js";
+export default {
+  data: function() {
+    return {
+      language: "en",
+      skills: skills
+    };
+  },
+  computed: {}
+};
 </script>
 
 <style>
