@@ -1,21 +1,37 @@
 export const quantum_card_status = {
+    no_status: {
+        unicode_icon: "",
+        color: "black",
+        en: "no status",
+        fr: "statut inconnu"
+    },
     new: {
+        unicode_icon: "🟊",
+        color: "yellow",
         en: "new",
         fr: "nouvelle"
     },
     rev: {
+        unicode_icon: "!",
+        color: "white",
         en: "revised",
         fr: "revue"
     },
     chg: {
+        unicode_icon: "⇨",
+        color: "green",
         en: "changed",
         fr: "changée"
     },
     rm: {
+        unicode_icon: "🞬",
+        color: "red",
         en: "removed",
         fr: "retirée"
     },
     unchg: {
+        unicode_icon: "",
+        color: "black",
         en: "unchanged",
         fr: "inchangée"
     }

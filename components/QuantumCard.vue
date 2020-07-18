@@ -3,12 +3,21 @@
     <div class="quantum_card">
       <div class="card_header">
         <span class="card_title">{{card_info[language]['name']}}</span>
-        <span
-          class="card_status"
-          :class="'status_'+status"
-          :style="{color:'status_color'}"
-        >{{status_text}}</span>
-        <span class="card_status_unicode_icon">{{status_unicode_icon}}</span>
+        <span class="card_status">
+          <span
+            class="card_status_unicode_icon"
+            :style="{color: status.color}"
+          >{{status.unicode_icon}}</span>
+          <span
+            class="card_status_text"
+            :class="'status_'+status"
+            :style="{color:status.color}"
+          >{{status[language]}}</span>
+          <span
+            class="card_status_unicode_icon"
+            :style="{color: status.color}"
+          >{{status.unicode_icon}}</span>
+        </span>
       </div>
       <div>
         <img class="card_art" :src="card_art" alt="card art" />
@@ -28,18 +37,9 @@ export default {
   computed: {
     status: function() {
       let st = this.card_info[this.language].status;
-      return quantum_card_status[st] ? st : "no_status";
-    },
-    status_text: function() {
-      if (this.status != "no_status") {
-        let card_status = quantum_card_status[this.status];
-        return card_status ? card_status[this.language] : "unknown status";
-      } else {
-        return "no status";
-      }
-    },
-    status_unicode_icon: function() {
-      return "O"; // 🟊🞬⇨?
+      return quantum_card_status[st]
+        ? quantum_card_status[st]
+        : quantum_card_status["no_status"];
     },
     card_art: function() {
       return (
@@ -81,13 +81,16 @@ export default {
 }
 
 .card_status {
-  text-align: center;
-  font-style: italic;
   font-size: large;
   padding: 1em;
   font-weight: bold;
-  text-transform: uppercase;
+}
+
+.card_status_text {
+  text-align: center;
+  font-style: italic;
   color: white;
+  text-transform: uppercase;
 }
 
 .card_text {
