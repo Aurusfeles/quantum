@@ -249,7 +249,7 @@ export const skills = [
     },
     {
         "type": "cbt",
-        "art": null,
+        "art": "ravenous",
         "en": {
             "name": "Ravenous",
             "text": "The first time you destroy an enemy ship each turn, gain 1 additional Dominance.",
@@ -268,7 +268,7 @@ export const skills = [
     },
     {
         "type": "con",
-        "art": null,
+        "art": "righteous",
         "en": {
             "name": "Righteous",
             "text": "You can not lose Dominance. You can not gain Research.",

@@ -1,18 +1,13 @@
 <template>
-  <div
-    class="bg-local rounded overflow-hidden border border-gray-400 shadow-md mt-8 ml-8 max-w-3xl p-4 p-8"
-    :style="{'background-image': image_path}"
-  >
-    <div class="md:flex">
-      <div class="mt-4 md:mt-0 md:ml-6">
-        <div
-          class="uppercase tracking-wide text-sm text-indigo-600 font-bold"
-          :class="card_info[language]['status']"
-        >{{card_info[language]['name']}}</div>
-        <div
-          class="block mt-1 text-lg leading-tight font-semibold text-gray-800"
-        >{{card_info[language]['text']}}</div>
-        <p class="mt-2 text-gray-500 italic">{{card_info[language]['notes']}}</p>
+  <div>
+    <div>
+      <!--  fonctionne->  <img src="~assets/images/agile.png" alt />  -->
+    </div>
+    <div class="quantum_card" :style="{ 'background-image': 'url(\'' + image_path + '\')'}">
+      <div class="content">
+        <div class="title" :class="card_info[language]['status']">{{card_info[language]['name']}}</div>
+        <div class="text">{{card_info[language]['text']}}</div>
+        <p class="notes">{{card_info[language]['notes']}}</p>
       </div>
     </div>
   </div>
@@ -25,8 +20,52 @@ export default {
   },
   computed: {
     image_path: function() {
-      return "~/static/images/" + this.card_info.art + ".png";
+      if (this.card_info.art) {
+        try {
+          return require("~/assets/images/" + this.card_info.art + ".png");
+        } catch (e) {
+          if (e.code !== "MODULE_NOT_FOUND") {
+            throw e;
+          }
+          return "";
+        }
+      }
     }
   }
 };
 </script>
+<style scoped>
+.quantum_card {
+  border: 1px;
+  border-color: lightslategray;
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px lightslategray;
+  margin-top: 2em;
+  margin-left: 2em;
+  max-width: 600px;
+  padding: 2em;
+}
+
+.content {
+  margin-top: 1em;
+}
+
+.title {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: indigo;
+}
+
+.notes {
+  margin-top: 0.5em;
+  color: lightslategray;
+  font-style: italic;
+}
+
+.text {
+  margin-top: 0.25em;
+  font-size: large;
+  line-height: 1.25;
+  font-weight: 600;
+}
+</style>
