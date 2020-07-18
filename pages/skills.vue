@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { skills, status } from "~/assets/skills.js";
+import { quantum_card_skills } from "~/assets/skills.js";
 export default {
   head() {
     return {
@@ -26,7 +26,7 @@ export default {
   data: function() {
     return {
       language: "fr",
-      skills: skills
+      skills: quantum_card_skills
     };
   },
   computed: {}

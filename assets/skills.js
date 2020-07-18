@@ -1,4 +1,4 @@
-export const status = {
+export const quantum_card_status = {
     new: {
         en: "new",
         fr: "nouvelle"
@@ -22,7 +22,7 @@ export const status = {
 
 };
 
-export const type = {
+export const quantum_card_type = {
     act: {
         en: "action",
         fr: "action"
@@ -54,7 +54,7 @@ export const type = {
 
 };
 
-export const skills = [
+export const quantum_card_skills = [
     {
         "type": "act",
         "art": null,

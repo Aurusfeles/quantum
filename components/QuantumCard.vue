@@ -1,35 +1,51 @@
 <template>
   <div>
     <div class="quantum_card">
-      <div class="title" :class="card_info[language]['status']">{{card_info[language]['name']}}</div>
-      <div>
-        <img class="card_art" :src="image_path" alt="card art" />
+      <div class="card_header">
+        <span class="card_title">{{card_info[language]['name']}}</span>
+        <span
+          class="card_status"
+          :class="'status_'+status"
+          :style="{color:'status_color'}"
+        >{{status_text}}</span>
+        <span class="card_status_unicode_icon">{{status_unicode_icon}}</span>
       </div>
-      <div class="text">{{card_info[language]['text']}}</div>
-      <p class="notes">{{card_info[language]['notes']}}</p>
+      <div>
+        <img class="card_art" :src="card_art" alt="card art" />
+      </div>
+      <div class="card_text">{{card_info[language]['text']}}</div>
+      <p class="card_notes">{{card_info[language]['notes']}}</p>
     </div>
   </div>
 </template>
 <script>
+import { quantum_card_status } from "~/assets/skills.js";
 export default {
   props: {
     card_info: Object,
     language: String
   },
   computed: {
-    image_path: function() {
-      if (this.card_info.art) {
-        try {
-          return require("~/assets/images/card_arts/" +
-            this.card_info.art +
-            ".png");
-        } catch (e) {
-          if (e.code !== "MODULE_NOT_FOUND") {
-            throw e;
-          }
-          return require("~/assets/images/card_arts/_no_art.png");
-        }
+    status: function() {
+      let st = this.card_info[this.language].status;
+      return quantum_card_status[st] ? st : "no_status";
+    },
+    status_text: function() {
+      if (this.status != "no_status") {
+        let card_status = quantum_card_status[this.status];
+        return card_status ? card_status[this.language] : "unknown status";
+      } else {
+        return "no status";
       }
+    },
+    status_unicode_icon: function() {
+      return "O"; // 🟊🞬⇨?
+    },
+    card_art: function() {
+      return (
+        "/images/card_arts/" +
+        (this.card_info.art ? this.card_info.art + ".png" : "_no_art.png")
+      );
     }
   }
 };
@@ -46,7 +62,7 @@ export default {
   min-height: 200px;
   background-color: #202030;
 }
-.title {
+.card_title {
   text-align: center;
   font-size: xx-large;
   padding: 1em;
@@ -55,7 +71,7 @@ export default {
   color: white;
 }
 
-.notes {
+.card_notes {
   padding: 1em;
   color: lightslategray;
   font-style: italic;
@@ -64,7 +80,17 @@ export default {
   width: 100%;
 }
 
-.text {
+.card_status {
+  text-align: center;
+  font-style: italic;
+  font-size: large;
+  padding: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+}
+
+.card_text {
   text-align: center;
   padding: 1em;
   font-size: large;
