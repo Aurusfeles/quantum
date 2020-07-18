@@ -44,7 +44,7 @@ export default {
     card_art: function() {
       return (
         "/images/card_arts/" +
-        (this.card_info.art ? this.card_info.art + ".png" : "_no_art.png")
+        (this.card_info.art ? this.card_info.art + ".jpg" : "_no_art.jpg")
       );
     }
   }

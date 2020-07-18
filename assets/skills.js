@@ -1,7 +1,7 @@
 export const quantum_card_status = {
     no_status: {
         unicode_icon: "",
-        color: "black",
+        color: "grey",
         en: "no status",
         fr: "statut inconnu"
     },
