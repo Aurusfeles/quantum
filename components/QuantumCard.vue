@@ -23,7 +23,7 @@
         <img class="card_art" :src="card_art" alt="card art" />
       </div>
       <div class="card_text">{{card_info[language]['text']}}</div>
-      <p class="card_notes">{{card_info[language]['notes']}}</p>
+      <!-- <p class="card_notes">{{card_info[language]['notes']}}</p>-->
     </div>
   </div>
 </template>
@@ -54,17 +54,17 @@ export default {
 .quantum_card {
   border: 1px;
   border-color: lightslategray;
-  border-radius: 25px;
+  border-radius: 15px;
   box-shadow: 5px 5px 5px lightslategray;
-  margin-top: 2em;
-  margin-left: 2em;
-  max-width: 600px;
-  min-height: 200px;
+  margin-top: 1em;
+  margin-left: 1em;
+  width: 300px;
+  height: 250px;
   background-color: #202030;
 }
 .card_title {
   text-align: center;
-  font-size: xx-large;
+  font-size: large;
   padding: 1em;
   font-weight: bold;
   text-transform: uppercase;
@@ -73,6 +73,7 @@ export default {
 
 .card_notes {
   padding: 1em;
+  font-size: smaller;
   color: lightslategray;
   font-style: italic;
 }
@@ -81,7 +82,7 @@ export default {
 }
 
 .card_status {
-  font-size: large;
+  font-size: small;
   padding: 1em;
   font-weight: bold;
 }
@@ -96,9 +97,9 @@ export default {
 .card_text {
   text-align: center;
   padding: 1em;
-  font-size: large;
+  font-size: small;
   line-height: 1.25;
-  font-weight: 600;
+  /*font-weight: 400;*/
   color: white;
 }
 </style>

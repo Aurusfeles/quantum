@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="card_list">
     <QuantumCard
       v-for="(skill,index) in skills"
       :key="index"
@@ -36,5 +36,10 @@ export default {
 <style>
 body {
   background-color: white;
+}
+.card_list {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 </style>
