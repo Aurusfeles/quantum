@@ -109,7 +109,7 @@ export const skills = [
     },
     {
         "type": "shp",
-        "art": "planning",
+        "art": "clever_",
         "en": {
             "name": "Clever",
             "text": "After reconfiguring, you may increase or decrease the ship number by 1.",
@@ -323,7 +323,7 @@ export const skills = [
     },
     {
         "type": "con",
-        "art": "tyrannical",
+        "art": "tyrannical_",
         "alt_art": "menance",
         "en": {
             "name": "Tyrannical",
@@ -677,7 +677,7 @@ export const skills = [
     },
     {
         "type": "cbt",
-        "art": "rational",
+        "art": "rational_",
         "en": {
             "name": "Rational",
             "text": "Your Combat rolls are 3",

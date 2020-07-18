@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style>
-.rm {
-  background-color: red;
+body {
+  background-color: white;
 }
 </style>

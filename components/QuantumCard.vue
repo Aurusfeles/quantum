@@ -1,14 +1,12 @@
 <template>
   <div>
-    <div>
-      <!--  fonctionne->  <img src="~assets/images/agile.png" alt />  -->
-    </div>
-    <div class="quantum_card" :style="{ 'background-image': 'url(\'' + image_path + '\')'}">
-      <div class="content">
-        <div class="title" :class="card_info[language]['status']">{{card_info[language]['name']}}</div>
-        <div class="text">{{card_info[language]['text']}}</div>
-        <p class="notes">{{card_info[language]['notes']}}</p>
+    <div class="quantum_card">
+      <div class="title" :class="card_info[language]['status']">{{card_info[language]['name']}}</div>
+      <div>
+        <img class="card_art" :src="image_path" alt="card art" />
       </div>
+      <div class="text">{{card_info[language]['text']}}</div>
+      <p class="notes">{{card_info[language]['notes']}}</p>
     </div>
   </div>
 </template>
@@ -22,12 +20,14 @@ export default {
     image_path: function() {
       if (this.card_info.art) {
         try {
-          return require("~/assets/images/" + this.card_info.art + ".png");
+          return require("~/assets/images/card_arts/" +
+            this.card_info.art +
+            ".png");
         } catch (e) {
           if (e.code !== "MODULE_NOT_FOUND") {
             throw e;
           }
-          return "";
+          return require("~/assets/images/card_arts/_no_art.png");
         }
       }
     }
@@ -43,29 +43,33 @@ export default {
   margin-top: 2em;
   margin-left: 2em;
   max-width: 600px;
-  padding: 2em;
+  min-height: 200px;
+  background-color: #202030;
 }
-
-.content {
-  margin-top: 1em;
-}
-
 .title {
+  text-align: center;
+  font-size: xx-large;
+  padding: 1em;
   font-weight: bold;
   text-transform: uppercase;
-  color: indigo;
+  color: white;
 }
 
 .notes {
-  margin-top: 0.5em;
+  padding: 1em;
   color: lightslategray;
   font-style: italic;
 }
+.card_art {
+  width: 100%;
+}
 
 .text {
-  margin-top: 0.25em;
+  text-align: center;
+  padding: 1em;
   font-size: large;
   line-height: 1.25;
   font-weight: 600;
+  color: white;
 }
 </style>
