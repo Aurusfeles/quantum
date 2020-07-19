@@ -15,14 +15,16 @@
           >{{status.unicode_icon}}</span>
         </span>
       </div>
-      <div>
+      <div id="card_body">
         <img id="card_art" :src="card_art" alt="card art" />
-      </div>
-      <div id="card_text">{{card_info[language]['text']}}</div>
-      <!-- <p class="card_notes">{{card_info[language]['notes']}}</p>-->
-      <div id="card_notes" v-if="card_info[language]['notes']">
-        <div id="notes_tag">notes</div>
-        <div id="notes_text">{{card_info[language]['notes']}}</div>
+        <div id="card_text">{{card_info[language]['text']}}</div>
+
+        <div id="card_notes" v-if="card_info[language]['notes']">
+          <div id="notes_tag">notes</div>
+          <div id="notes_text">
+            <div style="margin:1em;">{{card_info[language]['notes']}}</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -72,11 +74,8 @@ export default {
   color: white;
 }
 
-#card_notes {
-  padding: 1em;
-  font-size: smaller;
-  color: lightslategray;
-  font-style: italic;
+#card_body {
+  position: relative;
 }
 #card_art {
   width: 100%;
@@ -106,24 +105,31 @@ export default {
 
 #card_notes {
   position: absolute;
-  top: 30px;
-  left: 30px;
-  background-color: slategrey;
+  font-size: smaller;
+  font-style: italic;
+  top: 0px;
+  left: 0px;
   color: white;
   z-index: 1;
+  width: 100%;
 }
 #notes_tag {
-  /*writing-mode: vertical-rl;*/
+  padding-left: 1em;
+  text-transform: uppercase;
+  background-color: slategrey;
+  width: 30%;
 }
 
 #notes_text {
   color: white;
-  height: 0em;
+  height: 0px;
+  width: 100%;
   overflow: hidden;
-  transition-property: height;
-  transition: all 0.2s ease-in-out;
+  /*transition-property: height;
+  transition: all 0.2s ease-in-out;  works only with height in px*/
+  background-color: slategrey;
 }
 #card_notes:hover #notes_text {
-  height: 4em;
+  height: auto;
 }
 </style>
