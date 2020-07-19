@@ -1,18 +1,14 @@
 <template>
   <div>
-    <div class="quantum_card">
-      <div class="card_header">
-        <span class="card_title">{{card_info[language]['name']}}</span>
-        <span class="card_status">
+    <div id="quantum_card">
+      <div id="card_header">
+        <span id="card_title">{{card_info[language]['name']}}</span>
+        <span id="card_status">
           <span
             class="card_status_unicode_icon"
             :style="{color: status.color}"
           >{{status.unicode_icon}}</span>
-          <span
-            class="card_status_text"
-            :class="'status_'+status"
-            :style="{color:status.color}"
-          >{{status[language]}}</span>
+          <span id="card_status_text" :style="{color:status.color}">{{status[language]}}</span>
           <span
             class="card_status_unicode_icon"
             :style="{color: status.color}"
@@ -20,10 +16,14 @@
         </span>
       </div>
       <div>
-        <img class="card_art" :src="card_art" alt="card art" />
+        <img id="card_art" :src="card_art" alt="card art" />
       </div>
-      <div class="card_text">{{card_info[language]['text']}}</div>
+      <div id="card_text">{{card_info[language]['text']}}</div>
       <!-- <p class="card_notes">{{card_info[language]['notes']}}</p>-->
+      <div id="card_notes" v-if="card_info[language]['notes']">
+        <div id="notes_tag">notes</div>
+        <div id="notes_text">{{card_info[language]['notes']}}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -51,7 +51,8 @@ export default {
 };
 </script>
 <style scoped>
-.quantum_card {
+#quantum_card {
+  position: relative;
   border: 1px;
   border-color: lightslategray;
   border-radius: 15px;
@@ -62,7 +63,7 @@ export default {
   height: 250px;
   background-color: #202030;
 }
-.card_title {
+#card_title {
   text-align: center;
   font-size: large;
   padding: 1em;
@@ -71,35 +72,58 @@ export default {
   color: white;
 }
 
-.card_notes {
+#card_notes {
   padding: 1em;
   font-size: smaller;
   color: lightslategray;
   font-style: italic;
 }
-.card_art {
+#card_art {
   width: 100%;
 }
 
-.card_status {
+#card_status {
   font-size: small;
   padding: 1em;
   font-weight: bold;
 }
 
-.card_status_text {
+#card_status_text {
   text-align: center;
   font-style: italic;
   color: white;
   text-transform: uppercase;
 }
 
-.card_text {
+#card_text {
   text-align: center;
   padding: 1em;
   font-size: small;
   line-height: 1.25;
   /*font-weight: 400;*/
   color: white;
+}
+
+#card_notes {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background-color: slategrey;
+  color: white;
+  z-index: 1;
+}
+#notes_tag {
+  /*writing-mode: vertical-rl;*/
+}
+
+#notes_text {
+  color: white;
+  height: 0em;
+  overflow: hidden;
+  transition-property: height;
+  transition: all 0.2s ease-in-out;
+}
+#card_notes:hover #notes_text {
+  height: 4em;
 }
 </style>

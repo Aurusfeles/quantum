@@ -34,7 +34,15 @@ export const quantum_card_status = {
         color: "black",
         en: "unchanged",
         fr: "inchangée"
+    },
+    tst: {
+        unicode_icon: "?",
+        color: "yellow",
+        en: "playtesting",
+        fr: "en test"
+
     }
+
 
 };
 
@@ -143,9 +151,11 @@ export const quantum_card_skills = [
         }
     },
     {
+        "type": "act",
+        "art": "curious",
+        "alt_art": "zoning_in",
         "en": {
-            "type": "act",
-            "art": "zoning_in",
+
             "name": "Curious",
             "text": "At the end of your turn, if you did not Attack or Conquer, gain an additional Move or Research action.",
             "status": "chg",
@@ -167,14 +177,14 @@ export const quantum_card_skills = [
         "en": {
             "name": "Devious",
             "text": "You may move your ships through enemy ships. These spaces do not count towards your movement.",
-            "status": "playtesting",
+            "status": "tst",
 
             "notes": "The original game already had a good number of movement abilities, so this one was hard to come up with. I wanted a skill that let you do more 'surprise' manevuers like Stealthy does. Originally it just let you pass through other ships, but was still too weak compared to other cards."
         },
         "fr": {
             "name": "Sournois",
             "text": "Vos vaisseaux peuvent passer à travers les vaisseaux ennemis. Ces espaces ne comptent pas dans leurs déplacements.",
-            "status": "en test",
+            "status": "tst",
             "notes": "Le jeu de base avait déjà un grand nombre de capacité de Déplacement, alors celle-ci était difficile à trouver. Je souhaitais une Compétence qui vous laisse plus de surprise dans les manoeuvres, un peu comme *Stealthy*. À la base elle permettait simplement de passer à travers les vaisseaux, mais elle était encore trop faible par rapport aux autres."
         }
     },
@@ -201,14 +211,14 @@ export const quantum_card_skills = [
         "en": {
             "name": "Patient",
             "text": "Whenever you take a Tactic, you may instead store it. At the end of each of your turns, you may play a stored Tactic. When you take this Skill, you may take and store a Tactic.",
-            "status": "playtesting",
+            "status": "tst",
 
             "notes": "This card was designed more to explore the design space of setting up larger turns than to serve a specific gameplay purpose."
         },
         "fr": {
             "name": "Patient",
             "text": "A chaque fois que vous prenez une carte *Tactique*, vous pouvez décider de la mettre de côté. À la fin de chaque tour, vous pouvez jouer une carte *Tactique* mise de côté. Lorsque vous prenez cette Compétence, vous pouvez prendre et mettre de côté une carte *Tactique*.",
-            "status": "en test",
+            "status": "tst",
             "notes": "Cette carte a plus été élaborée dans l'idée de tester des tours de jeu plus longs, plutôt que pour amener une nouvelle mécanique de jeu."
         }
     },
@@ -235,14 +245,14 @@ export const quantum_card_skills = [
         "en": {
             "name": "Prideful",
             "text": "Your Dominance resets at 4, 5, or 6. When a player destroys one of your ships, they may take this card from you.",
-            "status": "playtesting",
+            "status": "tst",
 
             "notes": "We had a card called Fervent that reduced the amount of dominance you need to 4, and then to 5, but it still proved too good. I still really enjoyed the ability, so I want to try it with the mechanics of a Skill passing from player to player. My worry is that it might dramatically cahnge the flow of the game if it pops up."
         },
         "fr": {
             "name": "Orgueilleux",
             "text": "Votre bonus de Domination se déclenche à partir de 4. Lorsqu'un ennemi détruit un de vos vaisseau, il peut vous prendre cette carte.",
-            "status": "en test",
+            "status": "tst",
             "notes": "Nous avions une carte appelée Fervent qui réduisait la quantité de Domination nécessaire à 4, puis à 5, mais elle s'est révélée encore trop puissante. Mais j'aimais vraiment cette Compétence, donc j'ai voulu tester la mécanique d'une Compétence qui passe de joueur en joueur. Ma seule inquiétude est qu'elle peut bouleverser le déroulement du jeu lorsqu'elle apparaît."
         }
     },
@@ -252,14 +262,14 @@ export const quantum_card_skills = [
         "en": {
             "name": "Profiteering",
             "text": "When you take a card for Conquering, may instead gain 1 Missile.",
-            "status": "playtesting",
+            "status": "tst",
 
             "notes": "More ways to get missiles"
         },
         "fr": {
             "name": "Profiteur",
             "text": "Vous pouvez prendre un Missile au lieu d'une carte après une Conquête.",
-            "status": "en test",
+            "status": "tst",
             "notes": "Plus de façons d'obtenir des Missiles."
         }
     },
@@ -308,14 +318,14 @@ export const quantum_card_skills = [
         "en": {
             "name": "Ruthless",
             "text": "The first time you destroy an enemy ship each turn, you may disable one of the emeny's Skills until the start of your next turn.",
-            "status": "playtesting",
+            "status": "tst",
 
             "notes": "The spiritual sucessor to the original Sabotage card. Losing a card turns out to be quite a powerful effect, so to balance this Sabotage let the affected player choose which card they lose, however in practice this rarely does what you want. Ruthless solves by giving the ability to slow a player down without crippling them, while also providing them counter-play (by avoiding the Ruthless player's ships)."
         },
         "fr": {
             "name": "Implacable",
             "text": "À chaque tour, la première fois que vous détruisez le vaisseau d'un ennemi, vous pouvez désactiver une de ses Compétences jusqu'au début de votre prochain tour.",
-            "status": "en test",
+            "status": "tst",
             "notes": "Le successeur spirituel de la carte 'Sabotage' de base. Perdre une carte se révèle être un effet assez puissant. Pour équilibrer cela, le Sabotage laissait le joueur victime choisir la carte à supprimer, mais c'était rarement celle qu'on ciblait à la base. Implacable résout cela en donnant la possibilité de ralentir un joueur sans le diminuer pour autant, tout en leur laissant une échappatoire (en évitant les vaisseaux du joueur Implacable)."
         }
     },
@@ -344,7 +354,7 @@ export const quantum_card_skills = [
         "en": {
             "name": "Tyrannical",
             "text": "You may use your Dominance number as an additional ship number when Conquering.",
-            "status": "playtesting",
+            "status": "tst",
             "original": "Once per turn as a free action, you may reduce your research by 1 and gain 1 dominance.",
 
             "notes": "The original tyrannical was a weird card. It enabled a strategy our group dubbed 'Ghost Fleet', where you would try to get all your ships destroyed, not redeploy them, and use Tyrannical each turn to gain Dominance. While slow, the strategy is unstoppable and not that fun to play against. This new version still promotes the idea of having high dominance, but now it can be used as a tool opening up interesting decisions to the player. Do I want to tick it over this turn? Or wait so I can use that 5 to easily Conquer a different planet?"
@@ -352,7 +362,7 @@ export const quantum_card_skills = [
         "fr": {
             "name": "Tyrannique",
             "text": "Vous pouvez utiliser votre valeur de Domination comme une valeur additionnelle de vaisseau pour une Conquête.",
-            "status": "en test",
+            "status": "tst",
             "original": "Une fois par tour, vous pouvez gratuitement réduire votre Recherche de 1 pour augmenter votre Domination de 1.",
             "notes": "Le 'Tyrannique' originel était une carte bizarre. Elle permettait une stratégie que notre groupe surnommait 'La Flotte fantôme', où vous cherchiez à avoir tos vos vaisseaux détruits, ne pas les redéployer, et utiliser Tyrannique à chaque tour pour gagner de la Domination. Bien que lente, cette stratégie ne peut pas être contrée, et n'est pas amusante à observer. Cette nouvelle version incite toujours à avoir une Domination élevée, mais maintenant elle peut être utilisée comme un outil qui offre un choix intéressant au joueur. Est-ce que je veux réinitialiser  ma Domination ce tour-ci? Ou bien attendre et utiliser ce 5 pour Conquérir facilement cette planète?"
         }
