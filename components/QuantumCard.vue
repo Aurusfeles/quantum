@@ -111,26 +111,29 @@ export default {
   left: 0px;
   color: white;
   z-index: 1;
+  width: 30%;
+}
+#card_notes:hover {
   width: 100%;
 }
+
 #notes_tag {
   padding-left: 1em;
   text-transform: uppercase;
   background-color: slategrey;
-  width: 30%;
+  width: 100%;
   border-radius: 0px 0px 5px 0px;
 }
 
 #notes_text {
   color: white;
-  height: 0px;
+  height: 0;
   width: 100%;
   overflow: hidden;
-  /*transition-property: height;
-  transition: all 0.2s ease-in-out;  works only with height in px*/
   background-color: slategrey;
 }
-#card_notes:hover #notes_text {
+
+#card_notes:hover > #notes_text {
   height: auto;
 }
 </style>
