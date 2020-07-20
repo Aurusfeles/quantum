@@ -20,10 +20,10 @@
         <div id="card_text">{{card_info[language]['text']}}</div>
 
         <div id="card_notes" v-if="card_info[language]['notes']">
-          <div id="notes_tag">notes</div>
           <div id="notes_text">
             <div style="margin:1em;">{{card_info[language]['notes']}}</div>
           </div>
+          <div id="notes_tag">notes</div>
         </div>
       </div>
     </div>
@@ -118,6 +118,7 @@ export default {
   text-transform: uppercase;
   background-color: slategrey;
   width: 30%;
+  border-radius: 0px 0px 5px 0px;
 }
 
 #notes_text {

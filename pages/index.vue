@@ -4,7 +4,7 @@
       <Logo />
       <h1 class="title">quantum</h1>
       <div class="links">
-        <nuxt-link to="/skills">Skill cards</nuxt-link>
+        <nuxt-link to="skills">Skill cards</nuxt-link>
       </div>
     </div>
   </div>
