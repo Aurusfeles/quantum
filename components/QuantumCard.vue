@@ -30,13 +30,16 @@
   </div>
 </template>
 <script>
+import { mapState, mapMutations } from "vuex";
 import { quantum_card_status } from "~/assets/skills.js";
 export default {
   props: {
-    card_info: Object,
-    language: String
+    card_info: Object
   },
   computed: {
+    language: function() {
+      return this.$store.state.language;
+    },
     status: function() {
       let st = this.card_info[this.language].status;
       return quantum_card_status[st]
@@ -122,7 +125,7 @@ export default {
   text-transform: uppercase;
   background-color: slategrey;
   width: 100%;
-  border-radius: 0px 0px 5px 0px;
+  border-radius: 0px 0px 15px 0px;
 }
 
 #notes_text {
