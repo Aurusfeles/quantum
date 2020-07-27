@@ -2,8 +2,8 @@
   <div>
     <div id="quantum_card">
       <div id="card_header">
-        <span id="card_title">{{card_info[language]['name']}}</span>
-        <span id="card_status">
+        <div id="card_title">{{card_info[language]['name']}}</div>
+        <div id="card_status">
           <span
             class="card_status_unicode_icon"
             :style="{color: status.color}"
@@ -13,7 +13,7 @@
             class="card_status_unicode_icon"
             :style="{color: status.color}"
           >{{status.unicode_icon}}</span>
-        </span>
+        </div>
       </div>
       <div id="card_body">
         <img id="card_art" :src="card_art" alt="card art" />
@@ -34,25 +34,25 @@ import { mapState, mapMutations } from "vuex";
 import { quantum_card_status } from "~/assets/skills.js";
 export default {
   props: {
-    card_info: Object
+    card_info: Object,
   },
   computed: {
-    language: function() {
+    language: function () {
       return this.$store.state.language;
     },
-    status: function() {
+    status: function () {
       let st = this.card_info[this.language].status;
       return quantum_card_status[st]
         ? quantum_card_status[st]
         : quantum_card_status["no_status"];
     },
-    card_art: function() {
+    card_art: function () {
       return (
         "/images/card_arts/" +
         (this.card_info.art ? this.card_info.art + ".jpg" : "_no_art.jpg")
       );
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -65,13 +65,17 @@ export default {
   margin-top: 1em;
   margin-left: 1em;
   width: 300px;
-  height: 250px;
+  height: 300px;
   background-color: #202030;
 }
+
+#card_header {
+  display: flex;
+}
 #card_title {
-  text-align: center;
+  margin-left: 15px;
+  align-self: flex-start;
   font-size: large;
-  padding: 1em;
   font-weight: bold;
   text-transform: uppercase;
   color: white;
@@ -85,13 +89,14 @@ export default {
 }
 
 #card_status {
+  margin-left: auto;
+  align-self: flex-end;
   font-size: small;
-  padding: 1em;
+  padding-right: 1em;
   font-weight: bold;
 }
 
 #card_status_text {
-  text-align: center;
   font-style: italic;
   color: white;
   text-transform: uppercase;
