@@ -20,16 +20,18 @@ export default {
           rel: "stylesheet",
           href: "https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
         }*/
-      ]
+      ],
     };
   },
-  data: function() {
+  data: function () {
     return {
       language: "fr",
-      skills: quantum_card_skills
+      skills: quantum_card_skills,
     };
   },
-  computed: {}
+  mounted: function () {
+    this.$store.commit("changeActivePage", this.$route.path);
+  },
 };
 </script>
 
