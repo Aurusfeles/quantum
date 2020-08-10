@@ -21,4 +21,10 @@ export default {
 </script>
 
 <style>
+#content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 745px;
+}
 </style>
+

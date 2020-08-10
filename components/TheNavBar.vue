@@ -92,10 +92,11 @@ export default {
   width: 100%;
   z-index: 1000;
   background-color: white;
+  border: 1px solid black;
 }
 
 #link_tab {
-  margin-left: 4em;
+  margin-left: 2em;
   align-self: center;
 }
 #language_tab {
@@ -105,12 +106,12 @@ export default {
 
 .language_button {
   margin: 5px;
-  width: 20px;
-  height: 15px;
+  width: 30px;
+  height: 20px;
 }
 
 .link {
-  font-size: xx-large;
+  font-size: large;
   color: #282828;
   text-decoration: none;
   padding: 0.2em;
@@ -126,7 +127,7 @@ export default {
 }
 #logo {
   height: 80px;
-  margin: 0.4em;
+  margin: 0.4em 1em;
 }
 </style>
 

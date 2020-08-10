@@ -36,7 +36,7 @@ export const quantum_card_status = {
         fr: "inchangée"
     },
     tst: {
-        unicode_icon: "?",
+        unicode_icon: "🎲",
         color: "yellow",
         en: "playtesting",
         fr: "en test"
