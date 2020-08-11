@@ -93,7 +93,7 @@ export const quantum_card_skills = [
             "name": "Ambitieux",
             "text": "Une fois par tour, vous pouvez réaliser une action supplémentaire, puis poser un jeton sur cette carte. Si cette carte a 3 jetons sur elle, défaussez la.",
             "status": "new",
-            "notes": "La carte Resourceful est une de mes préférées, j'ai donc essayé d'élaborer cette carte comme une Compétence que je voudrais prendre à la place de Resourceful."
+            "notes": "La carte Hyperactif est une de mes préférées, j'ai donc essayé d'élaborer cette carte comme une Compétence que je voudrais prendre à la place de Hyperactif."
         }
     },
     {
@@ -399,17 +399,17 @@ export const quantum_card_skills = [
         "art": "agile",
         "fr": {
             "name": "Agile",
-            "text": null,
+
             "status": "unchg",
-            "original": "Tous vos vaisseaux bénéficient de +1 au mouvement.",
+            "text": "Tous vos vaisseaux bénéficient de +1 au mouvement.",
 
             "notes": null
         },
         "en": {
             "name": "Agile",
-            "text": null,
+
             "status": "unchg",
-            "original": "All of your ships have +1 movement.",
+            "text": "All of your ships have +1 movement.",
 
             "notes": null
         }
@@ -419,16 +419,16 @@ export const quantum_card_skills = [
         "art": "arrogant",
         "fr": {
             "name": "Arrogant",
-            "text": null,
+
             "status": "rm",
-            "original": "Si au début de votre tour vous avez plus de vaisseaux sur le plateau que tout autre joueur, vous effectuez une action en plus.",
+            "text": "Si au début de votre tour vous avez plus de vaisseaux sur le plateau que tout autre joueur, vous effectuez une action en plus.",
             "notes": null
         },
         "en": {
             "name": "Arrogant",
-            "text": null,
+
             "status": "rm",
-            "original": "If at the start of your turn you have more ships on the map than any other player, take 1 extra action.",
+            "text": "If at the start of your turn you have more ships on the map than any other player, take 1 extra action.",
 
             "notes": null
         }
@@ -485,17 +485,17 @@ export const quantum_card_skills = [
         "art": "conformist",
         "fr": {
             "name": "Conformiste",
-            "text": null,
+
             "status": "rm",
-            "original": "Si au début de votre tour au moins deux vaisseaux sur le plateau ont le même chiffre, vous disposez d'une action supplémentaire.",
+            "text": "Si au début de votre tour au moins deux vaisseaux sur le plateau ont le même chiffre, vous disposez d'une action supplémentaire.",
 
             "notes": null
         },
         "en": {
             "name": "Conformist",
-            "text": null,
+
             "status": "rm",
-            "original": "If at the start of your turn 2 or more of your ships on the map have the same number, take 1 extra action.",
+            "text": "If at the start of your turn 2 or more of your ships on the map have the same number, take 1 extra action.",
 
             "notes": null
         }
@@ -505,17 +505,16 @@ export const quantum_card_skills = [
         "art": "cruel",
         "fr": {
             "name": "Cruel",
-            "text": null,
+
             "status": "rm",
-            "original": "En combat, vous pouvez forcer votre adversaire à relancer le dé (une seule fois).",
+            "text": "En combat, vous pouvez forcer votre adversaire à relancer le dé (une seule fois).",
 
             "notes": "Remplacée par 'Brutal'"
         },
         "en": {
             "name": "Cruel",
-            "text": null,
             "status": "rm",
-            "original": "When you attack or defend, you can choose to have your opponent re-roll once.",
+            "text": "When you attack or defend, you can choose to have your opponent re-roll once.",
 
             "notes": "Replaced by 'Brutal'"
         }
@@ -550,17 +549,17 @@ export const quantum_card_skills = [
         "art": "dangerous",
         "fr": {
             "name": "Dangereux",
-            "text": null,
+
             "status": "unchg",
-            "original": "Lorsque vous défendez, avant que les joueurs ne lancent les dés de combat, vous pouvez décider de détruire les deux vaisseaux (aucun effet de domination).",
+            "text": "Lorsque vous défendez, avant que les joueurs ne lancent les dés de combat, vous pouvez décider de détruire les deux vaisseaux (aucun effet de domination).",
 
             "notes": null
         },
         "en": {
             "name": "Dangerous",
-            "text": null,
+
             "status": "unchg",
-            "original": "When you defend, before players roll combat dice, you can decide to destroy both ships (there is no dominance effect).",
+            "text": "When you defend, before players roll combat dice, you can decide to destroy both ships (there is no dominance effect).",
 
             "notes": null
         }
@@ -570,17 +569,15 @@ export const quantum_card_skills = [
         "art": "eager",
         "fr": {
             "name": "Impatient",
-            "text": null,
             "status": "rm",
-            "original": "Le déploiement n'utilise aucune de vos actions.",
+            "text": "Le déploiement n'utilise aucune de vos actions.",
 
             "notes": "Encore une carte qui était beaucoup trop puissante. Remplacée par 'Industriel'."
         },
         "en": {
             "name": "Eager",
-            "text": null,
             "status": "rm",
-            "original": "Deploy does not use up one of your actions.",
+            "text": "Deploy does not use up one of your actions.",
             "notes": "Another card that was just too powerful. Replaced by 'Industrious'"
         }
     },
@@ -589,18 +586,19 @@ export const quantum_card_skills = [
         "art": "steadfast",
         "fr": {
             "name": "Énergique",
-            "text": null,
             "status": "unchg",
-            "original": "Vos vaisseaux peuvent se déplacer/attaquer plus d'une fois par tour (chaque déplacement compte comme une action).",
+            "text": "Vos vaisseaux peuvent se déplacer/attaquer plus d'une fois par tour (chaque déplacement compte comme une action).",
 
-            "notes": null
         },
         "en": {
-            "name": "Steadfast",
+            "name": "Energetic",
             "text": null,
-            "status": "unchg",
-            "original": "Your ships can move or move/attack more than once per turn (each move counts as an action).",
-            "notes": "Renamed from 'Energetic'"
+            "status": "chg",
+            "text": "Your ships can move or move/attack more than once per turn (each move counts as an action).",
+            "changes": {
+                "name": "Steadfast"
+            }
+
         }
     },
     {
@@ -633,18 +631,18 @@ export const quantum_card_skills = [
         "fr": {
             "name": "Flexible",
             "text": "Une fois par tour, vous pouvez, gratuitement, ajouter ou retrancher 1 à l'un de vos dés de vaisseau.",
-            "status": "unchg",
-            "original": "Une fois par tour, vous pouvez, gratuitement, ajouter ou retrancher 1 à l'un de vos dés de vaisseau.",
-
-            "notes": null
+            "status": "rev",
+            "changes": {
+                "text": "Une fois par tour, vous pouvez ajouter ou retrancher 1 à l'un de vos dés de vaisseau.",
+            }
         },
         "en": {
             "name": "Flexible",
-            "text": "Once per turn, you may increase or decrease one of your ship numbers by 1",
             "status": "rev",
-            "original": "Once per turn, you may change one of your ship dice up or down by 1 as a free action.",
-
-            "notes": null
+            "text": "Once per turn, you may change one of your ship dice up or down by 1 as a free action.",
+            "changes": {
+                "text": "Once per turn, you may increase or decrease one of your ship numbers by 1",
+            }
         }
     },
     {
@@ -696,18 +694,15 @@ export const quantum_card_skills = [
         "art": "nomadic",
         "en": {
             "name": "Nomadic",
-            "text": null,
             "status": "rm",
-            "original": "Once per turn, spend an action to relocate one of your ships in orbital position – put it in orbital position around a planet that is next to its current planet.",
+            "text": "Once per turn, spend an action to relocate one of your ships in orbital position – put it in orbital position around a planet that is next to its current planet.",
 
             "notes": "This card rarely saw play and always required a further explanation of _exactly_ how it worked. In addition, it's ability isn't that flashy, so it ended up being a dead card."
         },
         "fr": {
             "name": "Nomade",
-            "text": null,
             "status": "rm",
-            "original": "Une fois par tour, vous pouvez utiliser une action pour disposer un de vos vaisseaux en position orbitale sur une planète voisine.",
-
+            "text": "Une fois par tour, vous pouvez utiliser une action pour disposer un de vos vaisseaux en position orbitale sur une planète voisine.",
             "notes": "Cette carte était rarement jouée, et demandait toujours des explications supplémentaires sur son fonctionnement exact. De plus, son pouvoir n'est pas si fantastique que ça, elle est donc devenue une carte morte."
         }
     },
@@ -716,11 +711,14 @@ export const quantum_card_skills = [
         "art": "plundering",
         "en": {
             "name": "Plundering",
-            "text": "The first time you destroy an enemy ship each turn, gain 3 Research",
-            "status": "unchg",
-            "original": "If you destroy one or more enemy ships on your turn, increase your research by 3.",
 
-            "notes": "The phrase 'If you destroy one or more enemy ships on your turn...' made it unclear exactly when the ability would trigger. There was also some debate about if the ability would trigger multiple times. We replaced all of these instances with this new wording."
+            "status": "rev",
+            "text": "If you destroy one or more enemy ships on your turn, increase your research by 3.",
+            "changes": {
+                "text": "The first time you destroy an enemy ship each turn, gain 3 Research",
+                "notes": "The phrase 'If you destroy one or more enemy ships on your turn...' made it unclear exactly when the ability would trigger. There was also some debate about if the ability would trigger multiple times. We replaced all of these instances with this new wording."
+            }
+
         },
         "fr": {
             "name": "Pilleur",
@@ -787,18 +785,15 @@ export const quantum_card_skills = [
         "art": "relentless",
         "en": {
             "name": "Relentless",
-            "text": null,
             "status": "rm",
-            "original": "When you attack or defend, you can roll again once after your opponent rolls.",
+            "text": "When you attack or defend, you can roll again once after your opponent rolls.",
 
             "notes": "Replaced by 'Brutal'"
         },
         "fr": {
             "name": "Impitoyable",
-            "text": null,
             "status": "rm",
-            "original": "En cas de combat, vous pouvez relancer le dé après le lancer de votre adversaire.",
-
+            "text": "En cas de combat, vous pouvez relancer le dé après le lancer de votre adversaire.",
             "notes": "Remplacée par 'Brutal'"
         }
     },
@@ -816,7 +811,7 @@ export const quantum_card_skills = [
             }
         },
         "fr": {
-            "name": "Resourceful",
+            "name": "Hyperactif",
 
             "status": "rev",
             "text": "Une fois par tour, déplacez un de vos vaisseaux du plateau vers votre casse, relancez-le, et gagnez une action en échange.",
@@ -831,17 +826,16 @@ export const quantum_card_skills = [
         "art": "scrappy",
         "en": {
             "name": "Scrappy",
-            "text": null,
             "status": "rm",
-            "original": "On your turn only, you may reroll all of your die rolls a second time (ship and weapons die rolls).",
+            "text": "On your turn only, you may reroll all of your die rolls a second time (ship and weapons die rolls).",
 
             "notes": "This card had too much overlap with other cards, and is often strictly better. Also theme on the card was rather weak."
         },
         "fr": {
             "name": "Pugnace",
-            "text": null,
+
             "status": "rm",
-            "original": "A votre tour de jeu, vous pouvez relancer vos dés une seconde fois (lancer de dés de vaisseaux et de combat).",
+            "text": "A votre tour de jeu, vous pouvez relancer vos dés une seconde fois (lancer de dés de vaisseaux et de combat).",
 
             "notes": "Cette carte était redondante avec d'autres, tout en étant souvent bien meilleure. De plus, la carte était en décalage thématiquement."
         }
@@ -899,9 +893,9 @@ export const quantum_card_skills = [
         "art": "stubborn",
         "en": {
             "name": "Stubborn",
-            "text": null,
+
             "status": "unchg",
-            "original": "When you are attacked, ties go in your favor and you destroy your attacker if you win (and gain dominance).",
+            "text": "When you are attacked, ties go in your favor and you destroy your attacker if you win (and gain dominance).",
 
             "notes": null
         },
