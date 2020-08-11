@@ -5,6 +5,8 @@
       :key="index"
       :card_info="skill"
       :language="language"
+      :apply_changes="true"
+      :show_status="true"
     ></QuantumCard>
   </div>
 </template>
@@ -26,8 +28,14 @@ export default {
   data: function () {
     return {
       language: "fr",
-      skills: quantum_card_skills,
     };
+  },
+  computed: {
+    skills: function () {
+      return quantum_card_skills.filter(
+        (skill) => skill[this.language].status != "rm"
+      );
+    },
   },
   mounted: function () {
     this.$store.commit("changeActivePage", this.$route.path);

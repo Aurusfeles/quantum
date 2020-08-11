@@ -136,18 +136,21 @@ export const quantum_card_skills = [
         "art": "clever_",
         "en": {
             "name": "Clever",
-            "text": "After reconfiguring, you may increase or decrease the ship number by 1.",
             "status": "chg",
-            "original": "Whenever you would roll a ship die, choose the ship number instead.",
-
-            "notes": "Clever was a must-pick card, it was far too powerful, I've rarely seen a clever player _not_ win. This rework went through several iterations, each time reducing it's power-level. We finally split it's ability across two cards (the other being Calculating). We now feel it's still a very useful card without being overbearing."
+            "text": "Whenever you would roll a ship die, choose the ship number instead.",
+            "changes": {
+                "text": "After reconfiguring, you may increase or decrease the ship number by 1.",
+                "notes": "Clever was a must-pick card, it was far too powerful, I've rarely seen a clever player _not_ win. This rework went through several iterations, each time reducing it's power-level. We finally split it's ability across two cards (the other being Calculating). We now feel it's still a very useful card without being overbearing.",
+            }
         },
         "fr": {
             "name": "Astucieux",
-            "text": "Après Reconfiguration, vous pouvez augmenter ou diminuer de 1 la valeur du vaisseau.",
             "status": "chg",
-            "original": "Vous pouvez choisir la valeur du dé (au lieu de le lancer) à chaque fois que vous devez reconfigurer un vaisseau.",
-            "notes": "La carte Astucieux était incontournable, beaucoup trop puissante. J'ai rarement vu un joueur perdre avec. Cette modification est passée par plusieurs itérations, réduisant sa puissance à chaque fois. Nous avons finalement séparé ce pouvoir en deux carte (l'autre étant Calculateur). Maintenant nous avons le sentiment que c'est une carte très utile sans être dominante."
+            "text": "Vous pouvez choisir la valeur du dé (au lieu de le lancer) à chaque fois que vous devez reconfigurer un vaisseau.",
+            "changes": {
+                "notes": "La carte Astucieux était incontournable, beaucoup trop puissante. J'ai rarement vu un joueur perdre avec. Cette modification est passée par plusieurs itérations, réduisant sa puissance à chaque fois. Nous avons finalement séparé ce pouvoir en deux carte (l'autre étant Calculateur). Maintenant nous avons le sentiment que c'est une carte très utile sans être dominante.",
+                "text": "Après Reconfiguration, vous pouvez augmenter ou diminuer de 1 la valeur du vaisseau.",
+            }
         }
     },
     {
@@ -157,18 +160,23 @@ export const quantum_card_skills = [
         "en": {
 
             "name": "Curious",
-            "text": "At the end of your turn, if you did not Attack or Conquer, gain an additional Move or Research action.",
+            "changes": {
+                "text": "At the end of your turn, if you did not Attack or Conquer, gain an additional Move or Research action.",
+                "notes": "We've tightened up the wording on the original card to fit better with the spirirt of what it was trying to give the player."
+            },
             "status": "chg",
-            "original": "Each turn, get 1 extra move action for free (you cannot use it to attack).",
-
-            "notes": "We've tightened up the wording on the original card to fit better with the spirirt of what it was trying to give the player."
+            "text": "Each turn, get 1 extra move action for free (you cannot use it to attack).",
         },
         "fr": {
             "name": "Curieux",
-            "text": "À la fin de chaque tour, si vous n'avez pas Attaqué ni Conquis, gagnez une action Déplacer ou Recherche supplémentaire.",
             "status": "chg",
-            "original": "Une fois par tour, vous pouvez effectuer un déplacement gratuit si vous n'attaquez pas pendant votre tour.",
-            "notes": "Nous avons remanié le texte de la carte d'origine pour avoir une meilleure idée de ce qu'elle offre au joueur."
+            "text": "Une fois par tour, vous pouvez effectuer un déplacement gratuit si vous n'attaquez pas pendant votre tour.",
+
+            "changes": {
+                "text": "À la fin de chaque tour, si vous n'avez pas Attaqué ni Conquis, gagnez une action Déplacer ou Recherche supplémentaire.",
+                "notes": "Nous avons remanié le texte de la carte d'origine pour avoir une meilleure idée de ce qu'elle offre au joueur."
+
+            }
         }
     },
     {
@@ -177,14 +185,14 @@ export const quantum_card_skills = [
         "en": {
             "name": "Devious",
             "text": "You may move your ships through enemy ships. These spaces do not count towards your movement.",
-            "status": "tst",
+            "status": "new",
 
             "notes": "The original game already had a good number of movement abilities, so this one was hard to come up with. I wanted a skill that let you do more 'surprise' manevuers like Stealthy does. Originally it just let you pass through other ships, but was still too weak compared to other cards."
         },
         "fr": {
             "name": "Sournois",
             "text": "Vos vaisseaux peuvent passer à travers les vaisseaux ennemis. Ces espaces ne comptent pas dans leurs déplacements.",
-            "status": "tst",
+            "status": "new",
             "notes": "Le jeu de base avait déjà un grand nombre de capacité de Déplacement, alors celle-ci était difficile à trouver. Je souhaitais une Compétence qui vous laisse plus de surprise dans les manoeuvres, un peu comme *Stealthy*. À la base elle permettait simplement de passer à travers les vaisseaux, mais elle était encore trop faible par rapport aux autres."
         }
     },
@@ -211,14 +219,14 @@ export const quantum_card_skills = [
         "en": {
             "name": "Patient",
             "text": "Whenever you take a Tactic, you may instead store it. At the end of each of your turns, you may play a stored Tactic. When you take this Skill, you may take and store a Tactic.",
-            "status": "tst",
+            "status": "new",
 
             "notes": "This card was designed more to explore the design space of setting up larger turns than to serve a specific gameplay purpose."
         },
         "fr": {
             "name": "Patient",
             "text": "A chaque fois que vous prenez une carte *Tactique*, vous pouvez décider de la mettre de côté. À la fin de chaque tour, vous pouvez jouer une carte *Tactique* mise de côté. Lorsque vous prenez cette Compétence, vous pouvez prendre et mettre de côté une carte *Tactique*.",
-            "status": "tst",
+            "status": "new",
             "notes": "Cette carte a plus été élaborée dans l'idée de tester des tours de jeu plus longs, plutôt que pour amener une nouvelle mécanique de jeu."
         }
     },
@@ -245,14 +253,14 @@ export const quantum_card_skills = [
         "en": {
             "name": "Prideful",
             "text": "Your Dominance resets at 4, 5, or 6. When a player destroys one of your ships, they may take this card from you.",
-            "status": "tst",
+            "status": "new",
 
             "notes": "We had a card called Fervent that reduced the amount of dominance you need to 4, and then to 5, but it still proved too good. I still really enjoyed the ability, so I want to try it with the mechanics of a Skill passing from player to player. My worry is that it might dramatically cahnge the flow of the game if it pops up."
         },
         "fr": {
             "name": "Orgueilleux",
             "text": "Votre bonus de Domination se déclenche à partir de 4. Lorsqu'un ennemi détruit un de vos vaisseau, il peut vous prendre cette carte.",
-            "status": "tst",
+            "status": "new",
             "notes": "Nous avions une carte appelée Fervent qui réduisait la quantité de Domination nécessaire à 4, puis à 5, mais elle s'est révélée encore trop puissante. Mais j'aimais vraiment cette Compétence, donc j'ai voulu tester la mécanique d'une Compétence qui passe de joueur en joueur. Ma seule inquiétude est qu'elle peut bouleverser le déroulement du jeu lorsqu'elle apparaît."
         }
     },
@@ -262,14 +270,14 @@ export const quantum_card_skills = [
         "en": {
             "name": "Profiteering",
             "text": "When you take a card for Conquering, may instead gain 1 Missile.",
-            "status": "tst",
+            "status": "new",
 
             "notes": "More ways to get missiles"
         },
         "fr": {
             "name": "Profiteur",
             "text": "Vous pouvez prendre un Missile au lieu d'une carte après une Conquête.",
-            "status": "tst",
+            "status": "new",
             "notes": "Plus de façons d'obtenir des Missiles."
         }
     },
@@ -278,18 +286,22 @@ export const quantum_card_skills = [
         "art": "ravenous",
         "en": {
             "name": "Ravenous",
-            "text": "The first time you destroy an enemy ship each turn, gain 1 additional Dominance.",
             "status": "chg",
-            "original": "When you destroy an enemy ship, dominance +2; when one of your ships is destroyed, dominance -2.",
+            "text": "When you destroy an enemy ship, dominance +2; when one of your ships is destroyed, dominance -2.",
+            "changes": {
+                "notes": "Abilities in Quantum almost never have downsides, so this card stood out. Many players would take this card once, and see how fickle the downside can be, and rarely ever take it again. We balanced the power level to only let it proc once a turn.",
+                "text": "The first time you destroy an enemy ship each turn, gain 1 additional Dominance.",
+            }
 
-            "notes": "Abilities in Quantum almost never have downsides, so this card stood out. Many players would take this card once, and see how fickle the downside can be, and rarely ever take it again. We balanced the power level to only let it proc once a turn."
         },
         "fr": {
             "name": "Vorace",
-            "text": "À chaque tour, gagnez 1 Domination supplémentaire la première fois que vous détruisez un vaisseau ennemi.",
             "status": "chg",
-            "original": "Lorsque vous détruisez un vaisseau ennemi, augmentez votre Domination de 2, lorsqu'un de vos vaisseaux est détruit, diminuez votre Domination de 2.",
-            "notes": "Les Compétences dans Quantum n'ont presque jamais d'inconvénients, alors cette carte sortait du lot. Beaucoup de joueurs prenaient cette carte une fois, se rendaient compte des désagréments, et ne la reprenaient jamais. Nous avons équilibré la puissance avec le nouveau système."
+            "text": "Lorsque vous détruisez un vaisseau ennemi, augmentez votre Domination de 2, lorsqu'un de vos vaisseaux est détruit, diminuez votre Domination de 2.",
+            "changes": {
+                "notes": "Les Compétences dans Quantum n'ont presque jamais d'inconvénients, alors cette carte sortait du lot. Beaucoup de joueurs prenaient cette carte une fois, se rendaient compte des désagréments, et ne la reprenaient jamais. Nous avons équilibré la puissance avec le nouveau système.",
+                "text": "À chaque tour, gagnez 1 Domination supplémentaire la première fois que vous détruisez un vaisseau ennemi.",
+            }
         }
     },
     {
@@ -297,19 +309,26 @@ export const quantum_card_skills = [
         "art": "righteous",
         "en": {
             "name": "Righteous",
-            "text": "You can not lose Dominance. You can not gain Research.",
-            "status": "chg",
-            "original": "Your dominance is not reduced when one of your ships is destroyed.",
 
-            "notes": "Righteous was too good, but the flavour of the card and the impact on the game was too good to remove, so we added on the no research penalty. The card still might be too good, but at least it is more of a situational pick-up."
+            "status": "chg",
+            "text": "Your dominance is not reduced when one of your ships is destroyed.",
+            "changes": {
+                "notes": "Righteous was too good, but the flavour of the card and the impact on the game was too good to remove, so we added on the no research penalty. The card still might be too good, but at least it is more of a situational pick-up.",
+                "text": "You can not lose Dominance. You can not gain Research.",
+
+            }
+
         },
         "fr": {
             "name": "Juste",
-            "text": "Vous ne pouvez pas perdre de Domination. Vous ne pouvez pas augmenter votre Recherche.",
-            "status": "chg",
-            "original": "Votre Domination n'est pas réduite lorsqu'un de vos vaisseaux est détruit.",
 
-            "notes": "La carte 'Juste' était trop puissante, mais elle était également trop belle et trop connectée avec le jeu pour être retirée, alors nous avons ajouté une pénalité sur la Recherche. Cette carte est peut-être encore trop puissante, mais au moins elle fait réfléchir à deux fois."
+            "status": "chg",
+            "text": "Votre Domination n'est pas réduite lorsqu'un de vos vaisseaux est détruit.",
+            "changes": {
+                "text": "Vous ne pouvez pas perdre de Domination. Vous ne pouvez pas augmenter votre Recherche.",
+                "notes": "La carte 'Juste' était trop puissante, mais elle était également trop belle et trop connectée avec le jeu pour être retirée, alors nous avons ajouté une pénalité sur la Recherche. Cette carte est peut-être encore trop puissante, mais au moins elle fait réfléchir à deux fois."
+            }
+
         }
     },
     {
@@ -318,14 +337,14 @@ export const quantum_card_skills = [
         "en": {
             "name": "Ruthless",
             "text": "The first time you destroy an enemy ship each turn, you may disable one of the emeny's Skills until the start of your next turn.",
-            "status": "tst",
+            "status": "new",
 
             "notes": "The spiritual sucessor to the original Sabotage card. Losing a card turns out to be quite a powerful effect, so to balance this Sabotage let the affected player choose which card they lose, however in practice this rarely does what you want. Ruthless solves by giving the ability to slow a player down without crippling them, while also providing them counter-play (by avoiding the Ruthless player's ships)."
         },
         "fr": {
             "name": "Implacable",
             "text": "À chaque tour, la première fois que vous détruisez le vaisseau d'un ennemi, vous pouvez désactiver une de ses Compétences jusqu'au début de votre prochain tour.",
-            "status": "tst",
+            "status": "new",
             "notes": "Le successeur spirituel de la carte 'Sabotage' de base. Perdre une carte se révèle être un effet assez puissant. Pour équilibrer cela, le Sabotage laissait le joueur victime choisir la carte à supprimer, mais c'était rarement celle qu'on ciblait à la base. Implacable résout cela en donnant la possibilité de ralentir un joueur sans le diminuer pour autant, tout en leur laissant une échappatoire (en évitant les vaisseaux du joueur Implacable)."
         }
     },
@@ -353,18 +372,26 @@ export const quantum_card_skills = [
         "alt_art": "menance",
         "en": {
             "name": "Tyrannical",
-            "text": "You may use your Dominance number as an additional ship number when Conquering.",
-            "status": "tst",
-            "original": "Once per turn as a free action, you may reduce your research by 1 and gain 1 dominance.",
 
-            "notes": "The original tyrannical was a weird card. It enabled a strategy our group dubbed 'Ghost Fleet', where you would try to get all your ships destroyed, not redeploy them, and use Tyrannical each turn to gain Dominance. While slow, the strategy is unstoppable and not that fun to play against. This new version still promotes the idea of having high dominance, but now it can be used as a tool opening up interesting decisions to the player. Do I want to tick it over this turn? Or wait so I can use that 5 to easily Conquer a different planet?"
+            "status": "chg",
+            "text": "Once per turn as a free action, you may reduce your research by 1 and gain 1 dominance.",
+            "changes": {
+                "text": "You may use your Dominance number as an additional ship number when Conquering.",
+                "notes": "The original tyrannical was a weird card. It enabled a strategy our group dubbed 'Ghost Fleet', where you would try to get all your ships destroyed, not redeploy them, and use Tyrannical each turn to gain Dominance. While slow, the strategy is unstoppable and not that fun to play against. This new version still promotes the idea of having high dominance, but now it can be used as a tool opening up interesting decisions to the player. Do I want to tick it over this turn? Or wait so I can use that 5 to easily Conquer a different planet?"
+            },
+
         },
         "fr": {
             "name": "Tyrannique",
-            "text": "Vous pouvez utiliser votre valeur de Domination comme une valeur additionnelle de vaisseau pour une Conquête.",
-            "status": "tst",
-            "original": "Une fois par tour, vous pouvez gratuitement réduire votre Recherche de 1 pour augmenter votre Domination de 1.",
-            "notes": "Le 'Tyrannique' originel était une carte bizarre. Elle permettait une stratégie que notre groupe surnommait 'La Flotte fantôme', où vous cherchiez à avoir tous vos vaisseaux détruits, ne pas les redéployer, et utiliser Tyrannique à chaque tour pour gagner de la Domination. Bien que lente, cette stratégie ne peut pas être contrée, et n'est pas amusante à observer. Cette nouvelle version incite toujours à avoir une Domination élevée, mais maintenant elle peut être utilisée comme un outil qui offre un choix intéressant au joueur. Est-ce que je veux réinitialiser  ma Domination ce tour-ci? Ou bien attendre et utiliser ce 5 pour Conquérir facilement cette planète?"
+
+            "status": "chg",
+            "text": "Une fois par tour, vous pouvez gratuitement réduire votre Recherche de 1 pour augmenter votre Domination de 1.",
+
+            "changes": {
+                "text": "Vous pouvez utiliser votre valeur de Domination comme une valeur additionnelle de vaisseau pour une Conquête.",
+                "notes": "Le 'Tyrannique' d'origine était une carte bizarre. Elle permettait une stratégie que notre groupe surnommait 'La Flotte fantôme', où vous cherchiez à avoir tous vos vaisseaux détruits, ne pas les redéployer, et utiliser Tyrannique à chaque tour pour gagner de la Domination. Bien que lente, cette stratégie ne peut pas être contrée, et n'est pas amusante à observer. Cette nouvelle version incite toujours à avoir une Domination élevée, mais maintenant elle peut être utilisée comme un outil qui offre un choix intéressant au joueur. Est-ce que je veux réinitialiser  ma Domination ce tour-ci? Ou bien attendre et utiliser ce 5 pour Conquérir facilement cette planète?",
+            }
+
         }
     },
     {
@@ -411,37 +438,46 @@ export const quantum_card_skills = [
         "art": "brilliant",
         "fr": {
             "name": "Brilliant",
-            "text": "Au début de votre tour, vous pouvez gagner 2 en Recherche.",
-            "status": "rev",
-            "original": "Ajoutez +2 au dé de recherche au début de votre tour.",
 
-            "notes": null
+            "status": "rev",
+            "text": "Ajoutez +2 au dé de recherche au début de votre tour.",
+            "changes": {
+                "text": "Au début de votre tour, vous pouvez gagner 2 en Recherche.",
+            }
         },
         "en": {
             "name": "Brilliant",
-            "text": "At the start of your turn, you may gain 2 Research.",
             "status": "rev",
-            "original": "Add 2 to your research automatically at the start of your turn.",
-            "notes": null
+            "text": "Add 2 to your research automatically at the start of your turn.",
+            "changes": {
+                "text": "At the start of your turn, you may gain 2 Research.",
+
+            },
+
         }
     },
     {
         "type": "res",
         "art": "composed",
         "fr": {
-            "name": "Réfléchi",
-            "text": "Une fois par tour, vous pouvez perdre 1 en Domination pour gagner 3 en Recherche.",
+            "name": "Cérébral",
+
             "status": "rev",
-            "original": "Une fois par tour sans coût d'action, vous pouvez réduire votre domination de 1 et gagner 3 en recherche.",
-            "notes": "Renommée (remplace 'Cérébral')"
+            "text": "Une fois par tour sans coût d'action, vous pouvez réduire votre domination de 1 et gagner 3 en recherche.",
+
+            "changes": {
+                "name": "Réfléchi",
+                "text": "Une fois par tour, vous pouvez perdre 1 en Domination pour gagner 3 en Recherche.",
+            }
         },
         "en": {
-            "name": "Composed",
-            "text": "Once per turn, you may lose 1 Dominance and gain 3 Research",
+            "name": "Cereberal",
             "status": "rev",
-            "original": "Once per turn as a free action, you may reduce your dominance by 1 and gain 3 research.",
-
-            "notes": "Renamed from 'Cereberal'"
+            "text": "Once per turn as a free action, you may reduce your dominance by 1 and gain 3 research.",
+            "changes": {
+                "name": "Composed",
+                "text": "Once per turn, you may lose 1 Dominance and gain 3 Research",
+            }
         }
     },
     {
@@ -489,19 +525,24 @@ export const quantum_card_skills = [
         "art": "cunning",
         "fr": {
             "name": "Rusé",
-            "text": "Une fois par tour, vous pouvez utiliser la capacité d'un de vos vaisseau une seconde fois.",
-            "status": "rev",
-            "original": "Une fois par tour, vous pouvez utiliser, gratuitement, la capacité d'un de vos vaisseaux une seconde fois.",
 
-            "notes": null
+            "status": "rev",
+            "text": "Une fois par tour, vous pouvez utiliser, gratuitement, la capacité d'un de vos vaisseaux une seconde fois.",
+            "changes": {
+                "text": "Une fois par tour, vous pouvez utiliser la capacité d'un de vos vaisseau une seconde fois.",
+
+            }
+
         },
         "en": {
             "name": "Cunning",
-            "text": "Once per turn, you may use one ship ability a second time.",
-            "status": "rev",
-            "original": "Once per turn, you may use one of your ship’s abilities a second time as a free action.",
 
-            "notes": null
+            "status": "rev",
+            "text": "Once per turn, you may use one of your ship’s abilities a second time as a free action.",
+
+            "changes": {
+                "text": "Once per turn, you may use one ship ability a second time.",
+            }
         }
     },
     {
@@ -567,19 +608,23 @@ export const quantum_card_skills = [
         "art": "ferocious",
         "fr": {
             "name": "Féroce",
-            "text": "-1 à vos jets de combat",
-            "status": "rev",
-            "original": "Soustrayez 1 à tous vos lancers de combat d'attaque et de défense.",
 
-            "notes": null
+            "status": "rev",
+            "text": "Soustrayez 1 à tous vos lancers de combat d'attaque et de défense.",
+
+            "changes": {
+                "text": "-1 à vos jets de combat",
+            }
         },
         "en": {
             "name": "Ferocious",
-            "text": "-1 to your Combat rolls",
-            "status": "rev",
-            "original": "Subtract 1 from every weapons or defenses combat roll.",
 
-            "notes": null
+            "status": "rev",
+            "text": "Subtract 1 from every weapons or defenses combat roll.",
+
+            "changes": {
+                "text": "-1 to your Combat rolls",
+            }
         }
     },
     {
@@ -607,19 +652,23 @@ export const quantum_card_skills = [
         "art": "ingenious",
         "fr": {
             "name": "Ingénieux",
-            "text": "Pour Conquérir, vous pouvez aussi utiliser les espaces en diagonale autour de la planète.",
-            "status": "rev",
-            "original": "Tous vos vaisseaux adjacents à la planète, même en dehors des positions orbitales, sont pris en compte pour une action de construction.",
 
-            "notes": null
+            "status": "rev",
+            "text": "Tous vos vaisseaux adjacents à la planète, même en dehors des positions orbitales, sont pris en compte pour une action de construction.",
+
+            "changes": {
+                "text": "Pour Conquérir, vous pouvez aussi utiliser les espaces en diagonale autour de la planète.",
+            }
         },
         "en": {
             "name": "Ingenious",
-            "text": "When Conquering, you may use spaces diagonal to a planet",
-            "status": "rev",
-            "original": "Each of your ships diagonally adjacent to a planet may be counted toward the construct action.",
 
-            "notes": null
+            "status": "rev",
+            "text": "Each of your ships diagonally adjacent to a planet may be counted toward the construct action.",
+
+            "changes": {
+                "text": "When Conquering, you may use spaces diagonal to a planet",
+            }
         }
     },
     {
@@ -627,19 +676,19 @@ export const quantum_card_skills = [
         "art": "intelligent",
         "en": {
             "name": "Intelligent",
-            "text": "When Conquering, you may add or subtract 1 from the planet number",
-            "status": "rev",
-            "original": "You can construct on a planet when you have an orbital total 1 higher or 1 lower than the planet’s number.",
 
-            "notes": null
+            "status": "rev",
+            "text": "You can construct on a planet when you have an orbital total 1 higher or 1 lower than the planet’s number.",
+            "changes": {
+                "text": "When Conquering, you may add or subtract 1 from the planet number",
+            }
         },
         "fr": {
             "name": "Intelligent",
-            "text": "Pour Conquérir, vous pouvez ajouter ou soustraire 1 au nombre de la planète.",
             "status": "rev",
-            "original": "Vous pouvez construire sure une planète avec un total orbital de +1 ou -1 par rapport à la valeur de la planète.",
+            "text": "Vous pouvez construire sure une planète avec un total orbital de +1 ou -1 par rapport à la valeur de la planète.",
+            "changes": { "text": "Pour Conquérir, vous pouvez ajouter ou soustraire 1 au nombre de la planète.", }
 
-            "notes": null
         }
     },
     {
@@ -675,10 +724,14 @@ export const quantum_card_skills = [
         },
         "fr": {
             "name": "Pilleur",
-            "text": "La première fois que vous détruisez un vaisseau ennemi pendant votre tour, gagnez 3 en Recherche.",
+
             "status": "rev",
-            "original": "Si vous détruisez un ou plusieurs vaisseaux ennemis pendant votre tour, augmentez votre recherche de 3.",
-            "notes": "La phrase 'Si vous détruisez un ou plusieurs vaisseaux ennemi pendant votre tour...' n'était pas très claire concernant le moment et le nombre de déclenchement de cette capacité."
+            "changes": {
+                "text": "La première fois que vous détruisez un vaisseau ennemi pendant votre tour, gagnez 3 en Recherche.",
+                "notes": "La phrase 'Si vous détruisez un ou plusieurs vaisseaux ennemi pendant votre tour...' n'était pas très claire concernant le moment et le nombre de déclenchement de cette capacité."
+            },
+            "text": "Si vous détruisez un ou plusieurs vaisseaux ennemis pendant votre tour, augmentez votre recherche de 3.",
+
         }
     },
     {
@@ -686,19 +739,23 @@ export const quantum_card_skills = [
         "art": "precocious",
         "en": {
             "name": "Precocious",
-            "text": "Your Research resets at 4, 5, or 6",
-            "status": "rev",
-            "original": "Gain an advance card when research = 4 or higher (instead of 6).",
 
-            "notes": null
+            "status": "rev",
+            "text": "Gain an advance card when research = 4 or higher (instead of 6).",
+
+            "changes": {
+                "text": "Your Research resets at 4, 5, or 6",
+            }
         },
         "fr": {
             "name": "Précoce",
-            "text": "Votre Recherche se réinitialise à 4, 5, ou 6.",
-            "status": "rev",
-            "original": "Gagnez une carte d'avancement lorsque le dé de recherche est égal à 4 ou plus (au lieu de 6).",
 
-            "notes": null
+            "status": "rev",
+            "text": "Gagnez une carte d'avancement lorsque le dé de recherche est égal à 4 ou plus (au lieu de 6).",
+
+            "changes": {
+                "text": "Votre Recherche se réinitialise à 4, 5, ou 6.",
+            }
         }
     },
     {
@@ -706,19 +763,23 @@ export const quantum_card_skills = [
         "art": "rational_",
         "en": {
             "name": "Rational",
-            "text": "Your Combat rolls are 3",
-            "status": "rev",
-            "original": "Instead of rolling for weapons and defenses, all of your combat die rolls are considered to be 3.",
 
-            "notes": null
+            "status": "rev",
+            "text": "Instead of rolling for weapons and defenses, all of your combat die rolls are considered to be 3.",
+
+            "changes": {
+                "text": "Your Combat rolls are 3",
+            }
         },
         "fr": {
             "name": "Rationnel",
-            "text": "Vos jets de combat valent toujours 3.",
-            "status": "rev",
-            "original": "En combat, au lieu de lancer les dés, tous vos scores sont considérés comme des 3.",
 
-            "notes": null
+            "status": "rev",
+            "text": "En combat, au lieu de lancer les dés, tous vos scores sont considérés comme des 3.",
+
+            "changes": {
+                "text": "Vos jets de combat valent toujours 3.",
+            }
         }
     },
     {
@@ -746,19 +807,23 @@ export const quantum_card_skills = [
         "art": "resourceful",
         "en": {
             "name": "Resourceful",
-            "text": "Once per turn, you may destroy one of your ships and gain 1 Action.",
-            "status": "rev",
-            "original": "Once per turn, take one of your ships from the map to your scrapyard, reroll it, and gain 1 action for that turn.",
 
-            "notes": null
+            "status": "rev",
+            "text": "Once per turn, take one of your ships from the map to your scrapyard, reroll it, and gain 1 action for that turn.",
+
+            "changes": {
+                "text": "Once per turn, you may destroy one of your ships and gain 1 Action.",
+            }
         },
         "fr": {
             "name": "Resourceful",
-            "text": "Une fois par tour, vous pouvez détruire un de vos vaisseau et gagner 1 action.",
-            "status": "rev",
-            "original": "Une fois par tour, déplacez un de vos vaisseaux du plateau vers votre casse, relancez-le, et gagnez une action en échange.",
 
-            "notes": null
+            "status": "rev",
+            "text": "Une fois par tour, déplacez un de vos vaisseaux du plateau vers votre casse, relancez-le, et gagnez une action en échange.",
+
+            "changes": {
+                "text": "Une fois par tour, vous pouvez détruire un de vos vaisseau et gagner 1 action.",
+            }
         }
     },
     {
@@ -786,19 +851,23 @@ export const quantum_card_skills = [
         "art": "stealthy",
         "en": {
             "name": "Stealthy",
-            "text": "You may deploy to any space that is not adjacent to a ship.",
-            "status": "rev",
-            "original": "You have the option of deploying to any space that is not next to another ship.",
 
-            "notes": null
+            "status": "rev",
+            "text": "You have the option of deploying to any space that is not next to another ship.",
+
+            "changes": {
+                "text": "You may deploy to any space that is not adjacent to a ship.",
+            }
         },
         "fr": {
             "name": "Furtif",
-            "text": "Vous pouvez vous déployer sur toute case qui n'est pas près d'un autre vaisseau.",
-            "status": "rev",
-            "original": "Vous avez la possibilité de vous déployer sur n'importe quelle case qui n'est pas près d'un autre vaisseau.",
 
-            "notes": null
+            "status": "rev",
+            "text": "Vous avez la possibilité de vous déployer sur n'importe quelle case qui n'est pas près d'un autre vaisseau.",
+
+            "changes": {
+                "text": "Vous pouvez vous déployer sur toute case qui n'est pas près d'un autre vaisseau.",
+            }
         }
     },
     {
@@ -806,19 +875,23 @@ export const quantum_card_skills = [
         "art": "strategic",
         "en": {
             "name": "Strategic",
-            "text": "During combat if your ship is adjacent to one or more friendly ships, -2 to your Combat roll.",
-            "status": "rev",
-            "original": "Any of your ships next to another one of your ships gets a -2 to every weapons or defenses combat roll (you can consider an attacker to be in either square).",
 
-            "notes": null
+            "status": "rev",
+            "text": "Any of your ships next to another one of your ships gets a -2 to every weapons or defenses combat roll (you can consider an attacker to be in either square).",
+
+            "changes": {
+                "text": "During combat if your ship is adjacent to one or more friendly ships, -2 to your Combat roll.",
+            }
         },
         "fr": {
             "name": "Stratégique",
-            "text": "Si un de vos vaisseaux est situé près d'un autre de vos vaisseaux, son jet de combat a un bonus de -2.",
-            "status": "rev",
-            "original": "N'importe lequel de vos vaisseaux situé près d'un autre de vos vaisseaux bénéficie de -2 à chaque lancer de combat d'attaque ou de défense.",
 
-            "notes": null
+            "status": "rev",
+            "text": "N'importe lequel de vos vaisseaux situé près d'un autre de vos vaisseaux bénéficie de -2 à chaque lancer de combat d'attaque ou de défense.",
+
+            "changes": {
+                "text": "Si un de vos vaisseaux est situé près d'un autre de vos vaisseaux, son jet de combat a un bonus de -2.",
+            }
         }
     },
     {
@@ -834,11 +907,13 @@ export const quantum_card_skills = [
         },
         "fr": {
             "name": "Obstiné",
-            "text": "Lorsque vous êtes attaqué, en cas d'égalité: vous remportez la victoire, détruisez votre assaillant et gagnez 1 en Domination.",
-            "status": "rev",
-            "original": "En combat, lorsque vous êtes attaqué, en cas d'égalité: vous remportez la victoire, détruisez votre assaillant et gagnez 1 point de domination.",
 
-            "notes": null
+            "status": "rev",
+            "text": "En combat, lorsque vous êtes attaqué, en cas d'égalité: vous remportez la victoire, détruisez votre assaillant et gagnez 1 point de domination.",
+
+            "changes": {
+                "text": "Lorsque vous êtes attaqué, en cas d'égalité: vous remportez la victoire, détruisez votre assaillant et gagnez 1 en Domination.",
+            }
         }
     },
     {
@@ -847,57 +922,52 @@ export const quantum_card_skills = [
         "alt_art": "day job",
         "en": {
             "name": "Tactical",
-            "text": "Once per turn, you may move/attack 1 space with a ship even if it's already moved.",
-            "status": "rev",
-            "original": "Once per turn as a free action, move a ship a total of 1 space (you can attack with the move).",
 
-            "notes": null
+            "status": "rev",
+            "text": "Once per turn as a free action, move a ship a total of 1 space (you can attack with the move).",
+
+            "changes": {
+                "text": "Once per turn, you may move/attack 1 space with a ship even if it's already moved.",
+            }
         },
         "fr": {
             "name": "Tactique",
-            "text": "Une fois par tour, vous pouvez effectuer un Déplacement (ou une Attaque) supplémentaire d'une case (même si le vaisseau s'est déjà déplacé).",
-            "status": "rev",
-            "original": "Une fois par tour, gratuitement, déplacez l'un de vos vaisseaux d'une case (vous pouvez attaquer avec ce déplacement).",
 
-            "notes": null
+            "status": "rev",
+            "text": "Une fois par tour, gratuitement, déplacez l'un de vos vaisseaux d'une case (vous pouvez attaquer avec ce déplacement).",
+
+            "changes": {
+                "text": "Une fois par tour, vous pouvez effectuer un Déplacement (ou une Attaque) supplémentaire d'une case (même si le vaisseau s'est déjà déplacé).",
+            }
         }
     },
     {
         "type": "act",
         "art": "hostile",
         "en": {
-            "name": "Hostile",
-            "text": "The first time you destroy an enemy ship each turn, gain 1 action.",
-            "status": "rev",
-            "original": "When you destroy 1 or more enemy ships on your turn, you gain 1 extra action for that turn.",
-
-            "notes": "Renamed from 'Warlike'"
-        },
-        "fr": {
-            "name": "Hostile",
-            "text": "À chaque tour, la première fois que vous détruisez un vaisseau ennemi, gagnez 1 action.",
-            "status": "rev",
-            "original": "Lorsque vous détruisez 1 vaisseau ennemi ou plus pendant votre tour, vous gagnez une action supplémentaire pour ce tour.",
-
-            "notes": "Renommée (remplace 'Belliqueux')"
-        }
-    },
-    {
-        "type": "act",
-        "art": "warlike",
-        "en": {
             "name": "Warlike",
-            "text": "When you destroy 1 or more enemy ships on your turn, you gain 1 extra action for that turn.",
-            "status": "rm",
 
-            "notes": "Renamed to 'Hostile'"
+            "status": "rev",
+            "text": "When you destroy 1 or more enemy ships on your turn, you gain 1 extra action for that turn.",
+            "changes": {
+                "text": "The first time you destroy an enemy ship each turn, gain 1 action.",
+                "name": "Hostile"
+
+            }
+
         },
         "fr": {
             "name": "Belliqueux",
-            "text": "Lorsque vous détruisez 1 vaisseau ennemi ou plus pendant votre tour, vous gagnez une action supplémentaire pour ce tour.",
-            "status": "rm",
 
-            "notes": "Renommée en 'Hostile'"
+            "status": "rev",
+            "text": "Lorsque vous détruisez 1 vaisseau ennemi ou plus pendant votre tour, vous gagnez une action supplémentaire pour ce tour.",
+
+            "changes": {
+                "name": "Hostile",
+                "text": "À chaque tour, la première fois que vous détruisez un vaisseau ennemi, gagnez 1 action.",
+            }
+
         }
-    }
+    },
+
 ];

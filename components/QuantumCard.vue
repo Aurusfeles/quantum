@@ -3,8 +3,8 @@
     <div id="quantum_card">
       <div id="card_edge"></div>
       <div id="card_header">
-        <div id="card_title">{{card_info[language]['name']}}</div>
-        <div id="card_status">
+        <div id="card_title">{{card.name}}</div>
+        <div v-if="show_status" id="card_status">
           <span
             class="card_status_unicode_icon"
             :style="{color: status.color}"
@@ -17,14 +17,14 @@
         </div>
       </div>
       <div id="card_art" :style="{ backgroundImage: `url(${card_art})` }">
-        <div id="card_notes" v-if="card_info[language]['notes']">
+        <div id="card_notes" v-if="card.notes">
           <div id="notes_text">
-            <div style="margin:1em;">{{card_info[language]['notes']}}</div>
+            <div style="margin:1em;">{{card.notes}}</div>
           </div>
           <div id="notes_tag">notes</div>
         </div>
       </div>
-      <div id="card_text">{{card_info[language]['text']}}</div>
+      <div id="card_text">{{card.text}}</div>
     </div>
   </div>
 </template>
@@ -34,13 +34,25 @@ import { quantum_card_status } from "~/assets/skills.js";
 export default {
   props: {
     card_info: Object,
+    apply_changes: Boolean,
+    show_status: Boolean,
   },
   computed: {
     language: function () {
       return this.$store.state.language;
     },
+    card: function () {
+      if (this.apply_changes) {
+        return {
+          ...this.card_info,
+          ...this.card_info[this.language],
+          ...this.card_info[this.language].changes,
+        };
+      }
+      return { ...this.card_info, ...this.card_info[this.language] };
+    },
     status: function () {
-      let st = this.card_info[this.language].status;
+      let st = this.card.status;
       return quantum_card_status[st]
         ? quantum_card_status[st]
         : quantum_card_status["no_status"];
@@ -48,7 +60,7 @@ export default {
     card_art: function () {
       return (
         "/images/card_arts/" +
-        (this.card_info.art ? this.card_info.art + ".jpg" : "_no_art.jpg")
+        (this.card.art ? this.card.art + ".jpg" : "_no_art.jpg")
       );
     },
   },
