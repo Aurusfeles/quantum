@@ -81,6 +81,17 @@ export default {
       this.$store.commit("changeLanguage", lng);
     },
   },
+  mounted: function () {
+    let lng =
+      navigator.language ||
+      navigator.browserLanguage ||
+      (navigator.languages || ["en"])[0];
+
+    lng = lng.split("-")[0];
+    if (this.languages[lng]) {
+      this.$store.commit("changeLanguage", lng);
+    }
+  },
 };
 </script>
 
