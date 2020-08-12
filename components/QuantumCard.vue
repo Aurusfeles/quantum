@@ -175,13 +175,17 @@ export default {
 #notes_text {
   color: white;
   height: 0;
+  max-height: 15em;
   width: 100%;
-  overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-color: lightgrey darkgrey;
+  scrollbar-width: thin;
   background-color: slategrey;
+  /*transition: all 0.5s ease-out;*/
 }
 
 #card_notes:hover > #notes_text {
-  height: auto;
+  height:auto ;
   border-radius: 0px 0px 15px 0px;
 }
 
