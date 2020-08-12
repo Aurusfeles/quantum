@@ -4,16 +4,8 @@
       <div id="card_edge"></div>
       <div id="card_header">
         <div id="card_title">{{card.name}}</div>
-        <div v-if="show_status" id="card_status">
-          <span
-            class="card_status_unicode_icon"
-            :style="{color: status.color}"
-          >{{status.unicode_icon}}</span>
-          <span id="card_status_text" :style="{color:status.color}">{{status[language]}}</span>
-          <span
-            class="card_status_unicode_icon"
-            :style="{color: status.color}"
-          >{{status.unicode_icon}}</span>
+        <div v-if="show_status" id="card_status">          
+          <span id="card_status_text" :style="{color:status.color}">{{status[language]}}</span>          
         </div>
       </div>
       <div id="card_art" :style="{ backgroundImage: `url(${card_art})` }">
@@ -21,10 +13,10 @@
           <div id="notes_text">
             <div style="margin:1em;">{{card.notes}}</div>
           </div>
-          <div id="notes_tag">notes</div>
+          <div id="notes_tag">{{translate("notes")}}</div>
         </div>
         <div v-if="changed" id="original_tag" @mouseover="revert_changes=true" @mouseleave="revert_changes=false">
-          original
+          {{translate("original")}}
           </div>
       </div>
       <div id="card_text">{{card.text}}</div>
@@ -33,7 +25,7 @@
 </template>
 <script>
 import { mapState, mapMutations } from "vuex";
-import { quantum_card_status } from "~/assets/skills.js";
+import { quantum_card_status,quantum_card_display_texts } from "~/assets/skills.js";
 export default {
   data: function(){
     return {
@@ -78,6 +70,11 @@ export default {
       );
     },
   },
+  methods:{
+    translate: function(text_id){
+      return quantum_card_display_texts[text_id][this.language];
+    }
+  }
 };
 </script>
 <style scoped>
@@ -161,7 +158,7 @@ export default {
   top: 0px;
   left: 0px;
   color: white;
-  z-index: 1;
+  z-index: 2;
   width: 30%;
 }
 #card_notes:hover {
@@ -169,8 +166,7 @@ export default {
 }
 
 #notes_tag {
-  padding-left: 1em;
-  text-transform: uppercase;
+  padding-left: 0.5em;  
   background-color: slategrey;
   width: 100%;
   border-radius: 0px 0px 15px 0px;
@@ -186,6 +182,11 @@ export default {
 
 #card_notes:hover > #notes_text {
   height: auto;
+  border-radius: 0px 0px 15px 0px;
+}
+
+#card_notes:hover > #notes_tag {
+  display: none;
 }
 
 #original_tag {
@@ -196,10 +197,9 @@ export default {
   right: 0px;
   color: white;
   z-index: 1;
-  width: 30%;
+  width: 35%;
   text-align: right;
-  padding-right: 1em;
-  text-transform: uppercase;
+  padding-right: 0.5em;
   background-color: rgb(126, 67, 0);  
   border-radius: 0px 0px 0px 15px;
 }

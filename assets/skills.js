@@ -1,50 +1,46 @@
 export const quantum_card_status = {
-    no_status: {
-        unicode_icon: "",
+    no_status: {        
         color: "grey",
         en: "no status",
         fr: "statut inconnu"
     },
-    new: {
-        unicode_icon: "🟊",
+    new: {        
         color: "yellow",
-        en: "new",
-        fr: "nouvelle"
+        en: "🟊new🟊",
+        fr: "🟊nouvelle🟊"
     },
-    rev: {
-        unicode_icon: "!",
+    rev: {        
         color: "white",
         en: "revised",
         fr: "revue"
     },
-    chg: {
-        unicode_icon: "⇨",
+    chg: {        
         color: "green",
         en: "changed",
         fr: "changée"
     },
-    rm: {
-        unicode_icon: "🞬",
+    rm: {        
         color: "red",
-        en: "removed",
-        fr: "retirée"
+        en: "🞬removed🞬",
+        fr: "🞬retirée🞬"
     },
-    unchg: {
-        unicode_icon: "",
+    unchg: {        
         color: "black",
         en: "unchanged",
         fr: "inchangée"
-    },
-    tst: {
-        unicode_icon: "🎲",
-        color: "yellow",
-        en: "playtesting",
-        fr: "en test"
-
     }
-
-
 };
+
+export const quantum_card_display_texts = {
+    notes:{
+        en: "see notes",
+        fr: "voir notes"
+    },
+    original:{
+        en: "see original",
+        fr: "voir originale"
+    }
+}
 
 export const quantum_card_type = {
     act: {
