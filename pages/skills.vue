@@ -5,7 +5,7 @@
       :key="index"
       :card_info="skill"
       :language="language"
-      :apply_changes="true"
+      :apply_changes_by_default="true"
       :show_status="true"
     ></QuantumCard>
   </div>

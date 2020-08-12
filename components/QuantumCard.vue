@@ -23,6 +23,9 @@
           </div>
           <div id="notes_tag">notes</div>
         </div>
+        <div v-if="changed" id="original_tag" @mouseover="revert_changes=true" @mouseleave="revert_changes=false">
+          original
+          </div>
       </div>
       <div id="card_text">{{card.text}}</div>
     </div>
@@ -32,14 +35,25 @@
 import { mapState, mapMutations } from "vuex";
 import { quantum_card_status } from "~/assets/skills.js";
 export default {
+  data: function(){
+    return {
+      revert_changes:  false
+    }
+  },
   props: {
     card_info: Object,
-    apply_changes: Boolean,
-    show_status: Boolean,
+    apply_changes_by_default: Boolean,
+    show_status: Boolean,    
   },
   computed: {
+    changed: function(){
+      return this.card.status=="chg" || this.card.status=="rev"
+    },
     language: function () {
       return this.$store.state.language;
+    },
+    apply_changes: function(){
+        return this.apply_changes_by_default && !this.revert_changes;
     },
     card: function () {
       if (this.apply_changes) {
@@ -172,5 +186,25 @@ export default {
 
 #card_notes:hover > #notes_text {
   height: auto;
+}
+
+#original_tag {
+  position: absolute;
+  font-size: smaller;
+  font-style: italic;
+  top: 0px;
+  right: 0px;
+  color: white;
+  z-index: 1;
+  width: 30%;
+  text-align: right;
+  padding-right: 1em;
+  text-transform: uppercase;
+  background-color: rgb(126, 67, 0);  
+  border-radius: 0px 0px 0px 15px;
+}
+
+#original_tag:hover{
+  background-color: rgb(252, 193, 1);
 }
 </style>
