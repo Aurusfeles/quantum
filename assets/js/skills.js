@@ -141,14 +141,14 @@ export const quantum_card_skills = [
         "art": null,
         "en": {
             "name": "Patient",
-            "text": "Whenever you take a Tactic, you may instead store it. At the end of each of your turns, you may play a stored Tactic. When you take this Skill, you may take and store a Tactic.",
+            "text": "You may store Tactic cards you take. At the end of each of your turns, you may play a stored Tactic. Take a Tactic card when you take this Skill.",
             "status": "new",
 
             "notes": "This card was designed more to explore the design space of setting up larger turns than to serve a specific gameplay purpose."
         },
         "fr": {
             "name": "Patient",
-            "text": "A chaque fois que vous prenez une carte *Tactique*, vous pouvez décider de la mettre de côté. À la fin de chaque tour, vous pouvez jouer une carte *Tactique* mise de côté. Lorsque vous prenez cette Compétence, vous pouvez prendre et mettre de côté une carte *Tactique*.",
+            "text": "Vous pouvez stocker les Tactiques que vous prenez. À la fin de chaque tour, vous pouvez jouer une Tactique stockée. Prenez une Tactique lorsque vous prenez cette Compétence.",
             "status": "new",
             "notes": "Cette carte a plus été élaborée dans l'idée de tester des tours de jeu plus longs, plutôt que pour amener une nouvelle mécanique de jeu."
         }
