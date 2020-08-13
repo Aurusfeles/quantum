@@ -101,7 +101,7 @@ Vous pouvez défausser un Missile en votre possession pour changer le résultat 
 
 
 #### Marqueurs de portail Hyypernet (x2)
-Marqueurs plats qui tiennent sur un espace de la carte et sur lesquels un dé peut tenir. Utilisé par la [Tactique Portail Hupernet].
+Marqueurs plats qui tiennent sur un espace de la carte et sur lesquels un dé peut tenir. Utilisé par la carte Tactique Portail Hypernet.
 
 #### Jetons Missiles (x8)
 De petits jetons représentant des missiles. [Exemple](https://www.thegamecrafter.com/publish/product/ArrowChit)

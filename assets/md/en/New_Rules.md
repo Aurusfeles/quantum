@@ -102,7 +102,7 @@ You may spend a Missile to change any player's combat roll to a 1. You may spend
 
 
 #### Hypernet Gate Tokens (x2)
-Flat tokens that fit on a space of the board and a die can sit on top of. Used by the [Hypernet Gate Tactic]()
+Flat tokens that fit on a space of the board and a die can sit on top of. Used by the Hypernet Gate Tactic card.
 
 
 #### Missile Tokens (x8)
