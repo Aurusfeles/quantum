@@ -3,7 +3,7 @@
 
 ## Qu'est-ce que Quantum?
 
-[Quantum](https://boardgamegeek.com/boardgame/143519/quantum) est un jeu de plateau abordable de type [4x](https://en.wikipedia.org/wiki/4X) développé par Eric Zimmerman en 2013.
+[Quantum](https://boardgamegeek.com/boardgame/143519/quantum) est un jeu de plateau facile à appréhender, de type [4x](https://fr.wikipedia.org/wiki/Jeu_4X) et développé par Eric Zimmerman en 2013.
 
 > Dans Quantum, chaque joueur dirige une flotte spatiale rattachée à l'une des 4 factions de l'humanité, et se bat pour conquérir des secteurs de la galaxie. Chaque dé est un vaisseau spatial. Sa valeur indique la distance de déplacement de ce vaisseau, mais aussi sa puissance de combat - plus le chiffre est petit, plus elle est forte. Ainsi, le [ 6 ] est un rapide mais fragile Éclaireur et le [ 1 ] est une lente mais puissante Station de Combat.
 
@@ -22,7 +22,7 @@ Quantum: Community Edition est l'oeuvre d'un groupe de passionnés don l'objecti
 
 
 
-## [Nouvelles règles](https://github.com/stolksdorf/quantum/blob/master/New%20Rules_fr.md)
+## Nouvelles règles
 Nous avons ajouté quelques règles et mécaniques pour apporter du renouveau.
 
 - Nouvelle mécanique d'Expansion
@@ -31,8 +31,8 @@ Nous avons ajouté quelques règles et mécaniques pour apporter du renouveau.
 - Nouveau jeton Missile pour contrôler exceptionnellement le hasard au combat
 
 
-## [Nouvelles cartes](https://github.com/stolksdorf/quantum/blob/master/Cards.md)
-Les capacités des cartes ton le coeur de Quantum. Nous avons créé de nouvelles cartes et avons équilibré celles d'origine.
+## Nouvelles cartes
+Les capacités des cartes sont le coeur de Quantum. Nous avons créé de nouvelles cartes et avons équilibré celles d'origine.
 
 - Compétences: 16 nouvelles et 21 revues
 - Tactiques: 6 nouvelles et 3 revues

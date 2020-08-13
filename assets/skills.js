@@ -1,42 +1,42 @@
 export const quantum_card_status = {
-    no_status: {        
+    no_status: {
         color: "grey",
         en: "no status",
         fr: "statut inconnu"
     },
-    new: {        
+    new: {
         color: "yellow",
         en: "🟊new🟊",
         fr: "🟊nouvelle🟊"
     },
-    rev: {        
+    rev: {
         color: "white",
         en: "revised",
         fr: "revue"
     },
-    chg: {        
+    chg: {
         color: "green",
         en: "changed",
         fr: "changée"
     },
-    rm: {        
+    rm: {
         color: "red",
         en: "🞬removed🞬",
         fr: "🞬retirée🞬"
     },
-    unchg: {        
-        color: "black",
+    unchg: {
+        color: "grey",
         en: "unchanged",
         fr: "inchangée"
     }
 };
 
 export const quantum_card_display_texts = {
-    notes:{
+    notes: {
         en: "see notes",
         fr: "voir notes"
     },
-    original:{
+    original: {
         en: "see original",
         fr: "voir originale"
     }

@@ -1,17 +1,17 @@
-# Les cartes
+# Cards
 
-Nous avons renommé les **Cartes de Commandement** (cartes au dos blanc) en **Cartes de Compétences**. Nous avons remarqué que personne ne se souvenait du nom original, alors nous avons décidé de les renommer.
-
-
-Chaque Tactique apparaît maintenant 2 fois dans la pioche de Tactiques. La grande variété des Compétences (Cartes de Commandement) dans le Quantum original était un sérieux argument de vente, alors nous avons essayé de mettre au point des Tactiques supplémentaires pour obtenir le même effet. Cela réduira aussi les répétitions dans les cartes visible, et évitera ainsi que ces cartes restent trop longtemps sans être prises.
+We have renamed **Command Cards** (white-backed cards) to **Skill Cards** and **Gambit Cards** (black-backed cards) tp **Tactic Cards**. We found that no one remembered the original names, so making it something more flavourful has removed this issue.
 
 
-Les cartes avec le statut 'En test' sont encore en cours d'équilibrage et de réglage. N'hésitez pas à les essayer, mais elle ne seront pas aussi abouties que les autres.
-
-Le statut 'Revue' indique que la carte a gardé la même mécanique que l'original, mais que le texte a été amélioré.
+All Tactics now show up twice in the Tactic Deck. The variety of Skills in the original Quantum was a huge selling point for the game, so we tried to design more Tactics to have the same effect. This will also reduce repeats and locked face-up cards for selection.
 
 
-_Les cartes prêtes-à-imprimer seront bientôt disponibles._
+Cards with the status of 'playtesting' are still being balanced and tweaked. Feel free to try them out, but they won't be as polished as the other cards.
+
+A status of 'revised' means that the card is mechanically the same to the original, but the wording has been improved.
+
+
+_Printable card proxies with art is coming soon._
 
 
 

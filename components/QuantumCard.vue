@@ -4,8 +4,8 @@
       <div id="card_edge"></div>
       <div id="card_header">
         <div id="card_title">{{card.name}}</div>
-        <div v-if="show_status" id="card_status">          
-          <span id="card_status_text" :style="{color:status.color}">{{status[language]}}</span>          
+        <div v-if="show_status" id="card_status">
+          <span id="card_status_text" :style="{color:status.color}">{{status[language]}}</span>
         </div>
       </div>
       <div id="card_art" :style="{ backgroundImage: `url(${card_art})` }">
@@ -15,9 +15,12 @@
           </div>
           <div id="notes_tag">{{translate("notes")}}</div>
         </div>
-        <div v-if="changed" id="original_tag" @mouseover="revert_changes=true" @mouseleave="revert_changes=false">
-          {{translate("original")}}
-          </div>
+        <div
+          v-if="changed"
+          id="original_tag"
+          @mouseover="revert_changes=true"
+          @mouseleave="revert_changes=false"
+        >{{translate("original")}}</div>
       </div>
       <div id="card_text">{{card.text}}</div>
     </div>
@@ -25,27 +28,30 @@
 </template>
 <script>
 import { mapState, mapMutations } from "vuex";
-import { quantum_card_status,quantum_card_display_texts } from "~/assets/skills.js";
+import {
+  quantum_card_status,
+  quantum_card_display_texts,
+} from "~/assets/skills.js";
 export default {
-  data: function(){
+  data: function () {
     return {
-      revert_changes:  false
-    }
+      revert_changes: false,
+    };
   },
   props: {
     card_info: Object,
     apply_changes_by_default: Boolean,
-    show_status: Boolean,    
+    show_status: Boolean,
   },
   computed: {
-    changed: function(){
-      return this.card.status=="chg" || this.card.status=="rev"
+    changed: function () {
+      return this.card.status == "chg" || this.card.status == "rev";
     },
     language: function () {
       return this.$store.state.language;
     },
-    apply_changes: function(){
-        return this.apply_changes_by_default && !this.revert_changes;
+    apply_changes: function () {
+      return this.apply_changes_by_default && !this.revert_changes;
     },
     card: function () {
       if (this.apply_changes) {
@@ -70,11 +76,11 @@ export default {
       );
     },
   },
-  methods:{
-    translate: function(text_id){
+  methods: {
+    translate: function (text_id) {
       return quantum_card_display_texts[text_id][this.language];
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -166,8 +172,8 @@ export default {
 }
 
 #notes_tag {
-  padding-left: 0.5em;  
-  background-color: slategrey;
+  padding-left: 0.5em;
+  background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   border-radius: 0px 0px 15px 0px;
 }
@@ -185,7 +191,7 @@ export default {
 }
 
 #card_notes:hover > #notes_text {
-  height:auto ;
+  height: auto;
   border-radius: 0px 0px 15px 0px;
 }
 
@@ -204,11 +210,11 @@ export default {
   width: 35%;
   text-align: right;
   padding-right: 0.5em;
-  background-color: rgb(126, 67, 0);  
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 0px 0px 0px 15px;
 }
 
-#original_tag:hover{
-  background-color: rgb(252, 193, 1);
+#original_tag:hover {
+  background-color: rgba(100, 100, 100, 0.5);
 }
 </style>

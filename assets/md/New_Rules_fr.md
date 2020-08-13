@@ -1,4 +1,4 @@
-# New Rules
+# Nouvelles règles
 
 
 
@@ -104,7 +104,7 @@ Vous pouvez défausser un Missile en votre possession pour changer le résultat 
 Marqueurs plats qui tiennent sur un espace de la carte et sur lesquels un dé peut tenir. Utilisé par la [Tactique Portail Hupernet].
 
 #### Jetons Missiles (x8)
-De petits jetons représentant des missiles. [Arrow Chits](https://www.thegamecrafter.com/publish/product/ArrowChit) tels que ceux là.
+De petits jetons représentant des missiles. [Exemple](https://www.thegamecrafter.com/publish/product/ArrowChit)
 
 #### Jetons Ambition (x3)
 Jetons représentant une action dépensée sur la carte de Compétence Ambitieux. Vous pouvez utiliser ceux que vous souhaitez.
