@@ -26,6 +26,10 @@ html {
   box-sizing: border-box;
 }
 
+*{
+  box-sizing: border-box;  
+}
+
 a {
   color: darkblue;
   text-decoration: none;
