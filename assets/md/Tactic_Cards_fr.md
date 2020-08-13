@@ -1,3 +1,4 @@
+# Cartes Tactique
 
 Chaque Tactique apparaît maintenant 2 fois dans la pioche de Tactiques. La grande variété des Compétences (Cartes de Commandement) dans le Quantum original était un sérieux argument de vente, alors nous avons essayé de mettre au point des Tactiques supplémentaires pour obtenir le même effet. Cela réduira aussi les répétitions dans les cartes visible, et évitera ainsi que ces cartes restent trop longtemps sans être prises.
 

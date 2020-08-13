@@ -97,7 +97,17 @@ export default {
   margin-left: 1em;
   width: 22em;
   height: 16em;
-  background-color: #202030;
+  background-image: linear-gradient(
+    0deg,
+    #303045 25%,
+    #202030 25%,
+    #202030 50%,
+    #303045 50%,
+    #303045 75%,
+    #202030 75%,
+    #202030 100%
+  );
+  background-size: 8px 8px;
   overflow: hidden;
 }
 
