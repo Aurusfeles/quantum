@@ -9,6 +9,9 @@
         </div>
       </div>
       <div id="card_art" :style="{ backgroundImage: `url(${card_art})` }">
+        <div id="playtesting" v-if="card.playtesting">
+          {{translate("playtesting")}}
+          </div>
         <div id="card_notes" v-if="card.notes">
           <div id="notes_text">
             <div style="margin:1em;">{{card.notes}}</div>
@@ -227,5 +230,16 @@ export default {
 
 #original_tag:hover {
   background-color: rgba(100, 100, 100, 0.5);
+}
+
+#playtesting{
+  position: absolute;  
+  width:100%;
+  text-align:center;
+  text-transform: uppercase;  
+  font-size: x-large;  
+  color: yellow;
+  bottom: 0px;
+  z-index: 1;
 }
 </style>

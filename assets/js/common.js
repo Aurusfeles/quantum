@@ -39,7 +39,12 @@ export const quantum_card_display_texts = {
     original: {
         en: "see original",
         fr: "voir originale"
+    },
+    playtesting: {
+        en: "🚧playtesting🚧",
+        fr: "🚧en cours de test🚧"
     }
+
 }
 
 export const quantum_card_type = {

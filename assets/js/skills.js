@@ -76,11 +76,11 @@ export const quantum_card_skills = [
     {
         "type": "act",
         "art": "curious",
-        "alt_art": "zoning_in",
         "en": {
 
             "name": "Curious",
             "changes": {
+                "art": "zoning_in",
                 "text": "At the end of your turn, if you did not Attack or Conquer, gain an additional Move or Research action.",
                 "notes": "We've tightened up the wording on the original card to fit better with the spirirt of what it was trying to give the player."
             },
@@ -93,6 +93,7 @@ export const quantum_card_skills = [
             "text": "Une fois par tour, vous pouvez effectuer un déplacement gratuit si vous n'attaquez pas pendant votre tour.",
 
             "changes": {
+                "art": "zoning_in",
                 "text": "À la fin de chaque tour, si vous n'avez pas Attaqué ni Conquis, gagnez une action Déplacer ou Recherche supplémentaire.",
                 "notes": "Nous avons remanié le texte de la carte d'origine pour avoir une meilleure idée de ce qu'elle offre au joueur."
 
@@ -102,6 +103,7 @@ export const quantum_card_skills = [
     {
         "type": "mvt",
         "art": "jack",
+        "playtesting": true,
         "en": {
             "name": "Devious",
             "text": "You may move your ships through enemy ships. These spaces do not count towards your movement.",
@@ -135,6 +137,7 @@ export const quantum_card_skills = [
     },
     {
         "type": "crd",
+        "playtesting": true,
         "art": null,
         "en": {
             "name": "Patient",
@@ -170,6 +173,7 @@ export const quantum_card_skills = [
     {
         "type": "con",
         "art": null,
+        "playtesting": true,
         "en": {
             "name": "Prideful",
             "text": "Your Dominance resets at 4, 5, or 6. When a player destroys one of your ships, they may take this card from you.",
@@ -187,6 +191,7 @@ export const quantum_card_skills = [
     {
         "type": "cbt",
         "art": null,
+        "playtesting": true,
         "en": {
             "name": "Profiteering",
             "text": "When you take a card for Conquering, may instead gain 1 Missile.",
@@ -254,6 +259,7 @@ export const quantum_card_skills = [
     {
         "type": "crd",
         "art": "wrath",
+        "playtesting": true,
         "en": {
             "name": "Ruthless",
             "text": "The first time you destroy an enemy ship each turn, you may disable one of the emeny's Skills until the start of your next turn.",
@@ -289,13 +295,14 @@ export const quantum_card_skills = [
     {
         "type": "con",
         "art": "tyrannical_",
-        "alt_art": "menance",
+        "playtesting": true,
         "en": {
             "name": "Tyrannical",
 
             "status": "chg",
             "text": "Once per turn as a free action, you may reduce your research by 1 and gain 1 dominance.",
             "changes": {
+                "art": "menance",
                 "text": "You may use your Dominance number as an additional ship number when Conquering.",
                 "notes": "The original tyrannical was a weird card. It enabled a strategy our group dubbed 'Ghost Fleet', where you would try to get all your ships destroyed, not redeploy them, and use Tyrannical each turn to gain Dominance. While slow, the strategy is unstoppable and not that fun to play against. This new version still promotes the idea of having high dominance, but now it can be used as a tool opening up interesting decisions to the player. Do I want to tick it over this turn? Or wait so I can use that 5 to easily Conquer a different planet?"
             },
@@ -308,6 +315,7 @@ export const quantum_card_skills = [
             "text": "Une fois par tour, vous pouvez gratuitement réduire votre Recherche de 1 pour augmenter votre Domination de 1.",
 
             "changes": {
+                "art": "menance",
                 "text": "Vous pouvez utiliser votre valeur de Domination comme une valeur additionnelle de vaisseau pour une Conquête.",
                 "notes": "Le 'Tyrannique' d'origine était une carte bizarre. Elle permettait une stratégie que notre groupe surnommait 'La Flotte fantôme', où vous cherchiez à avoir tous vos vaisseaux détruits, ne pas les redéployer, et utiliser Tyrannique à chaque tour pour gagner de la Domination. Bien que lente, cette stratégie ne peut pas être contrée, et n'est pas amusante à observer. Cette nouvelle version incite toujours à avoir une Domination élevée, mais maintenant elle peut être utilisée comme un outil qui offre un choix intéressant au joueur. Est-ce que je veux réinitialiser  ma Domination ce tour-ci? Ou bien attendre et utiliser ce 5 pour Conquérir facilement cette planète?",
             }
@@ -833,7 +841,6 @@ export const quantum_card_skills = [
     {
         "type": "act",
         "art": "tactical",
-        "alt_art": "day job",
         "en": {
             "name": "Tactical",
 
@@ -841,6 +848,7 @@ export const quantum_card_skills = [
             "text": "Once per turn as a free action, move a ship a total of 1 space (you can attack with the move).",
 
             "changes": {
+                "art": "day_job",
                 "text": "Once per turn, you may move/attack 1 space with a ship even if it's already moved.",
             }
         },
@@ -851,6 +859,7 @@ export const quantum_card_skills = [
             "text": "Une fois par tour, gratuitement, déplacez l'un de vos vaisseaux d'une case (vous pouvez attaquer avec ce déplacement).",
 
             "changes": {
+                "art": "day_job",
                 "text": "Une fois par tour, vous pouvez effectuer un Déplacement (ou une Attaque) supplémentaire d'une case (même si le vaisseau s'est déjà déplacé).",
             }
         }

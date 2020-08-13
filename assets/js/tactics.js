@@ -2,19 +2,21 @@ export const quantum_card_tactics = [
     {
 
         "art": null,
+        "playtesting": true,
         "en": {
             "name": "Black Market Cache",
             "text": "Gain 2 Missiles",
-            "status": "playtesting",
+            "status": "new",
         },
         "fr": {
             "name": "Planque du Marché Noir",
             "text": "Gagnez 2 Missiles",
-            "status": "en test",
+            "status": "new",
         }
     },
     {
         "art": null,
+        "playtesting": true,
         "en": {
             "name": "Show of Force",
             "text": "Destroy any one ship. Gain 1 Dominance.",
@@ -74,13 +76,14 @@ export const quantum_card_tactics = [
         }
     },
     {
-        "art": "explode",
+        "art": null,
         "en": {
             "name": "Sabotage",
 
             "status": "chg",
             "text": "All other players must immediately choose and discard one of their command cards.",
             "changes": {
+                "art": "explode",
                 "text": "Every opponent's next turn has 1 fewer actions.",
                 "notes": "The original Sabotage lead to a lot of bad-feeling moments while also not providing much upside to the person selecting it. If there was a specific ability you wanted to remove from a player, this card did not help you get rid of it; The affected players would just select their worse card to remove. This card was also a 'win-more' card where it hurt players who were behind more than it hurt players that were ahead. This new version can help you get 'one turn ahead' of everyone else without crippling them, it can also be used to delay someone's winning turn."
             }
@@ -91,6 +94,7 @@ export const quantum_card_tactics = [
             "text": "Les joueurs adverses défaussent immédiatement une carte de commandement de leur choix.",
             "status": "chg",
             "changes": {
+                "art": "explode",
                 "text": "Le prochain tour de vos adversaires comporte une action de moins.",
                 "notes": "La carte Sabotage d'origine apportait un sentiment global de gêne, sans apporter un grand avantage à celui qui la choisit. S'il y avait une compétence particulière que vous vouliez retirer d'un joueur, cette carte ne vous aidait pas; le joueur en question retirait simplement sa moins bonne carte. C'était aussi une carte 'gagner plus' qui embêtait plus les joueurs en retrait que ceux qui était en tête. Cette nouvelle version peut vous aider à avoir 'un tour d'avance' sur les autres sans les handicaper. Elle peut aussi remettre à plus tard le tour où un adversaire peut gagner."
             }
