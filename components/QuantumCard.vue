@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="quantum_card">
-      <div id="card_edge"></div>
+      <div id="card_edge" :style="{ backgroundImage: `url(${card_edge_art})` }"></div>
       <div id="card_header">
         <div id="card_title">{{card.name}}</div>
         <div v-if="show_status" id="card_status">
@@ -28,10 +28,8 @@
 </template>
 <script>
 import { mapState, mapMutations } from "vuex";
-import {
-  quantum_card_status,
-  quantum_card_display_texts,
-} from "~/assets/skills.js";
+import { quantum_card_status,quantum_card_display_texts} from "~/assets/js/common.js";
+
 export default {
   data: function () {
     return {
@@ -42,8 +40,12 @@ export default {
     card_info: Object,
     apply_changes_by_default: Boolean,
     show_status: Boolean,
+    type: String
   },
   computed: {
+    card_edge_art: function(){
+      return `/images/${this.type}_edge.png`;
+    },
     changed: function () {
       return this.card.status == "chg" || this.card.status == "rev";
     },
@@ -111,9 +113,8 @@ export default {
   overflow: hidden;
 }
 
-#card_edge {
-  background: url("/images/skill_edge.png");
-  background-size: cover;
+#card_edge {  
+  background-size: 100% 100%;  
   grid-column: 1;
   grid-row: 1 / 4;
 }

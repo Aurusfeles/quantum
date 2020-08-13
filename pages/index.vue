@@ -9,8 +9,7 @@ import { mapState, mapMutations } from "vuex";
 export default {
   computed: {
     content: function () {
-      var file = `README_${this.$store.state.language}.md`;
-      let md = require(`~/assets/md/${file}`); /*  ~/assets/md/  allow require to load all md folder as context  */
+      let md = require(`~/assets/md/${this.$store.state.language}/main.md`); /*  ~/assets/md/  allow require to load all md folder as context  */
       return md.html;
     },
   },

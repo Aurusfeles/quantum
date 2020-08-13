@@ -26,7 +26,6 @@
 </template>
 <script>
 import { mapState, mapMutations } from "vuex";
-import { quantum_card_status } from "~/assets/skills.js";
 export default {
   data: function () {
     return {
@@ -58,8 +57,15 @@ export default {
         skills: {
           route: "/skills",
           caption: {
-            en: "Skills",
-            fr: "Compétences",
+            en: "Skill cards",
+            fr: "Cartes Compétence",
+          },
+        },        
+        tacticss: {
+          route: "/tactics",
+          caption: {
+            en: "Tactic cards",
+            fr: "Cartes Tactique",
           },
         },
       },
@@ -126,7 +132,8 @@ export default {
   color: #282828;
   text-decoration: none;
   padding: 0.2em;
-  margin: 0.2em;
+  margin-left:1em;
+  margin-right:1em;
   text-transform: uppercase;
   font-weight: bold;
 }

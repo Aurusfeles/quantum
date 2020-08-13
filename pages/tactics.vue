@@ -1,38 +1,38 @@
 <template>
   <div>
-    <div class="text_content" v-html="new_skill_cards_text"></div>
+    <div id="text_content" v-html="new_tactic_cards_text"></div>
     <div class="card_list">
       <QuantumCard
-        v-for="(skill,index) in skills"
+        v-for="(tactic,index) in tactics"
         :key="index"
-        :card_info="skill"
+        :card_info="tactic"
         :language="language"
         :apply_changes_by_default="true"
         :show_status="true"
-        type="skill"
+        type="tactic"
       ></QuantumCard>
     </div>
-    <div class="text_content" v-html="removed_skill_cards_text"></div>
+    <div class="text_content" v-html="removed_tactic_cards_text"></div>
     <div class="card_list">      
       <QuantumCard
-        v-for="(skill,index) in removed_skills"
+        v-for="(tactic,index) in removed_tactics"
         :key="index"
-        :card_info="skill"
+        :card_info="tactic"
         :language="language"
         :apply_changes_by_default="true"
         :show_status="true"
-        type="skill"
+        type="tactic"
       ></QuantumCard>
     </div>
   </div>
 </template>
 
 <script>
-import { quantum_card_skills } from "~/assets/js/skills.js";
+import { quantum_card_tactics } from "~/assets/js/tactics.js";
 export default {
   head() {
     return {
-      title: "Skills",
+      title: "Tactics",
       link: [
         /*{
           rel: "stylesheet",
@@ -48,22 +48,22 @@ export default {
   },
 
   computed: {
-    new_skill_cards_text: function () {
-      let md = require(`~/assets/md/${this.$store.state.language}/New_Skill_Cards.md`); /*  ~/assets/md/  allow require to load all md folder as context  */
+    new_tactic_cards_text: function () {
+      let md = require(`~/assets/md/${this.$store.state.language}/New_Tactic_Cards.md`); /*  ~/assets/md/  allow require to load all md folder as context  */
       return md.html;
     },
-    removed_skill_cards_text: function () {
-      let md = require(`~/assets/md/${this.$store.state.language}/Removed_Skill_Cards.md`); /*  ~/assets/md/  allow require to load all md folder as context  */
+    removed_tactic_cards_text: function () {
+      let md = require(`~/assets/md/${this.$store.state.language}/Removed_Tactic_Cards.md`); /*  ~/assets/md/  allow require to load all md folder as context  */
       return md.html;
     },
-    skills: function () {
-      return quantum_card_skills.filter(
-        (skill) => skill[this.language].status != "rm"
-      );
+    tactics: function () {
+      return quantum_card_tactics.filter(
+        (tactic) => tactic[this.language].status != "rm"
+      );      
     },
-    removed_skills: function () {
-      return quantum_card_skills.filter(
-        (skill) => skill[this.language].status == "rm"
+    removed_tactics: function () {
+      return quantum_card_tactics.filter(
+        (tactic) => tactic[this.language].status == "rm"
       );
     },
   },
@@ -82,7 +82,7 @@ body {
   align-items: flex-start;
   flex-wrap: wrap;
 }
-.text_content {
+#text_content {
   margin-left: auto;
   margin-right: auto;
   width: 745px;
