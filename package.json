@@ -6,6 +6,7 @@
     "dev": "nuxt",
     "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
     "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate",
+    "generate": "nuxt generate",
     "start": "nuxt start",
     "export": "nuxt export",
     "serve": "nuxt serve",
