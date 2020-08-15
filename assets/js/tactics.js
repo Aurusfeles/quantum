@@ -176,7 +176,7 @@ export const quantum_card_tactics = [
             "notes": "Replaced by 'Unveil the Fleet'"
         },
         "fr": {
-            "name": "Réorganization",
+            "name": "Réorganisation",
             "status": "rm",
             "text": "Placez chaque vaisseau relancé en position orbitale autour d'une planète comportant un de vos cubes ou dans votre casse.",
             "notes": "Remplacée par \"Réveler la flotte\"."

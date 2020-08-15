@@ -24,7 +24,7 @@ export const quantum_card_skills = [
             "text": "For Combat rolls, roll twice and use the lower number.",
             "status": "new",
 
-            "notes": "Cruel and relentless were both mechnically the same, so we wanted to reduce it to just one card. The wording was also trickier then it needed to be."
+            "notes": "Cruel and relentless were both mechanically the same, so we wanted to reduce it to just one card. The wording was also trickier then it needed to be."
         },
         "fr": {
             "name": "Brutal",
@@ -156,6 +156,7 @@ export const quantum_card_skills = [
     {
         "type": "con",
         "art": "create",
+        "playtesting": true,
         "en": {
             "name": "Pioneering",
             "text": "You may use your Research number in place of one of your ship numbers when Conquering.",
@@ -179,7 +180,7 @@ export const quantum_card_skills = [
             "text": "Your Dominance resets at 4, 5, or 6. When a player destroys one of your ships, they may take this card from you.",
             "status": "new",
 
-            "notes": "We had a card called Fervent that reduced the amount of dominance you need to 4, and then to 5, but it still proved too good. I still really enjoyed the ability, so I want to try it with the mechanics of a Skill passing from player to player. My worry is that it might dramatically cahnge the flow of the game if it pops up."
+            "notes": "We had a card called Fervent that reduced the amount of dominance you need to 4, and then to 5, but it still proved too good. I still really enjoyed the ability, so I want to try it with the mechanics of a Skill passing from player to player. My worry is that it might dramatically change the flow of the game if it pops up."
         },
         "fr": {
             "name": "Orgueilleux",

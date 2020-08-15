@@ -9,9 +9,7 @@
         </div>
       </div>
       <div id="card_art" :style="{ backgroundImage: `url(${card_art})` }">
-        <div id="playtesting" v-if="card.playtesting">
-          {{translate("playtesting")}}
-          </div>
+        <div id="playtesting" v-if="card.playtesting">{{translate("playtesting")}}</div>
         <div id="card_notes" v-if="card.notes">
           <div id="notes_text">
             <div style="margin:1em;">{{card.notes}}</div>
@@ -31,7 +29,10 @@
 </template>
 <script>
 import { mapState, mapMutations } from "vuex";
-import { quantum_card_status,quantum_card_display_texts} from "~/assets/js/common.js";
+import {
+  quantum_card_status,
+  quantum_card_display_texts,
+} from "~/assets/js/common.js";
 
 export default {
   data: function () {
@@ -43,10 +44,10 @@ export default {
     card_info: Object,
     apply_changes_by_default: Boolean,
     show_status: Boolean,
-    type: String
+    type: String,
   },
   computed: {
-    card_edge_art: function(){
+    card_edge_art: function () {
       return `/images/${this.type}_edge.png`;
     },
     changed: function () {
@@ -104,11 +105,11 @@ export default {
   height: 16em;
   background-image: linear-gradient(
     0deg,
-    #303045 25%,
+    #151520 25%,
     #202030 25%,
     #202030 50%,
-    #303045 50%,
-    #303045 75%,
+    #151520 50%,
+    #151520 75%,
     #202030 75%,
     #202030 100%
   );
@@ -116,8 +117,8 @@ export default {
   overflow: hidden;
 }
 
-#card_edge {  
-  background-size: 100% 100%;  
+#card_edge {
+  background-size: 100% 100%;
   grid-column: 1;
   grid-row: 1 / 4;
 }
@@ -232,14 +233,15 @@ export default {
   background-color: rgba(100, 100, 100, 0.5);
 }
 
-#playtesting{
-  position: absolute;  
-  width:100%;
-  text-align:center;
-  text-transform: uppercase;  
-  font-size: x-large;  
+#playtesting {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: x-large;
   color: yellow;
   bottom: 0px;
   z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 </style>
