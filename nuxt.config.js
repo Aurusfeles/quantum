@@ -6,6 +6,9 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
 
 
 export default {
+
+  ...routerBase,
+
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
