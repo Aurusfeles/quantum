@@ -1,6 +1,6 @@
 <template>
   <div id="navbar">
-    <img id="logo" src="/images/logo.jpg" alt="logo" />
+    <img id="logo" :src="require('~/assets/images/logo.jpg')" alt="logo" />
     <div id="link_tab">
       <nuxt-link
         class="link"
@@ -19,7 +19,7 @@
         :alt="lang.name"
         class="language_button"
         @click="changeLanguage(lang.id)"
-        :src="'/images/languages/'+lang.id + '.png'"
+        :src="require(`~/assets/images/languages/${lang.id}.png`)"
       />
     </div>
   </div>
@@ -60,7 +60,7 @@ export default {
             en: "Skill cards",
             fr: "Cartes Compétence",
           },
-        },        
+        },
         tacticss: {
           route: "/tactics",
           caption: {
@@ -132,8 +132,8 @@ export default {
   color: #282828;
   text-decoration: none;
   padding: 0.2em;
-  margin-left:1em;
-  margin-right:1em;
+  margin-left: 1em;
+  margin-right: 1em;
   text-transform: uppercase;
   font-weight: bold;
 }

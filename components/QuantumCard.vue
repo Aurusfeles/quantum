@@ -48,7 +48,7 @@ export default {
   },
   computed: {
     card_edge_art: function () {
-      return `/images/${this.type}_edge.png`;
+      return require(`~/assets/images/${this.type}_edge.png`);
     },
     changed: function () {
       return this.card.status == "chg" || this.card.status == "rev";
@@ -76,10 +76,9 @@ export default {
         : quantum_card_status["no_status"];
     },
     card_art: function () {
-      return (
-        "/images/card_arts/" +
-        (this.card.art ? this.card.art + ".jpg" : "_no_art.jpg")
-      );
+      return require(`~/assets/images/card_arts/${
+        this.card.art ? this.card.art : "_no_art"
+      }.jpg`);
     },
   },
   methods: {
