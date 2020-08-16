@@ -53,7 +53,7 @@ export const quantum_card_skills = [
     },
     {
         "type": "shp",
-        "art": "clever_",
+        "art": "clever",
         "en": {
             "name": "Clever",
             "status": "chg",
@@ -295,7 +295,7 @@ export const quantum_card_skills = [
     },
     {
         "type": "con",
-        "art": "tyrannical_",
+        "art": "tyrannical",
         "playtesting": true,
         "en": {
             "name": "Tyrannical",
@@ -387,7 +387,7 @@ export const quantum_card_skills = [
     },
     {
         "type": "res",
-        "art": "composed",
+        "art": "cerebral",
         "fr": {
             "name": "Cérébral",
 
@@ -400,7 +400,7 @@ export const quantum_card_skills = [
             }
         },
         "en": {
-            "name": "Cereberal",
+            "name": "Cerebral",
             "status": "rev",
             "text": "Once per turn as a free action, you may reduce your dominance by 1 and gain 3 research.",
             "changes": {
@@ -512,7 +512,7 @@ export const quantum_card_skills = [
     },
     {
         "type": "mvt",
-        "art": "steadfast",
+        "art": "energetic",
         "fr": {
             "name": "Énergique",
             "status": "unchg",
@@ -687,7 +687,7 @@ export const quantum_card_skills = [
     },
     {
         "type": "cbt",
-        "art": "rational_",
+        "art": "rational",
         "en": {
             "name": "Rational",
 
@@ -867,7 +867,7 @@ export const quantum_card_skills = [
     },
     {
         "type": "act",
-        "art": "hostile",
+        "art": "warlike",
         "en": {
             "name": "Warlike",
 

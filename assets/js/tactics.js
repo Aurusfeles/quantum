@@ -69,14 +69,14 @@ export const quantum_card_tactics = [
             "notes": "Can be used defensively or to set up a big offense turn"
         },
         "fr": {
-            "name": "Plannification",
+            "name": "Planification",
             "text": "Jusqu'à la fin de votre prochain tour, tous vos jets de combat valent 1.",
             "status": "new",
             "notes": "Peut être utilisée en défense ou pour préparer un tour très offensif."
         }
     },
     {
-        "art": null,
+        "art": "sabotage",
         "en": {
             "name": "Sabotage",
 
@@ -118,7 +118,7 @@ export const quantum_card_tactics = [
         }
     },
     {
-        "art": null,
+        "art": "aggression",
         "en": {
             "name": "Aggression",
             "status": "rev",
@@ -138,7 +138,7 @@ export const quantum_card_tactics = [
         }
     },
     {
-        "art": null,
+        "art": "expansion",
         "en": {
             "name": "Expansion",
             "status": "rm",
@@ -153,7 +153,7 @@ export const quantum_card_tactics = [
         }
     },
     {
-        "art": null,
+        "art": "momentum",
         "en": {
             "name": "Momentum",
             "status": "unchg",
@@ -168,7 +168,7 @@ export const quantum_card_tactics = [
         }
     },
     {
-        "art": null,
+        "art": "reorganization",
         "en": {
             "name": "Reorganization",
             "status": "rm",
@@ -183,7 +183,7 @@ export const quantum_card_tactics = [
         }
     },
     {
-        "art": null,
+        "art": "relocation",
         "en": {
             "name": "Relocation",
             "status": "rm",
