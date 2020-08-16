@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div id="quantum_card">
-      <div id="card_edge" :style="{ backgroundImage: `url(${card_edge_art})` }"></div>
+    <div id="quantum_card" :style="{'grid-template-columns':grid_template_columns}">
+      <img :src="card_overlay_art" alt="card overlay" id="card_overlay" />
       <div id="card_header">
         <div id="card_title">{{card.name}}</div>
         <div v-if="show_status" id="card_status">
@@ -47,8 +47,15 @@ export default {
     type: String,
   },
   computed: {
-    card_edge_art: function () {
-      return require(`~/assets/images/${this.type}_edge.png`);
+    grid_template_columns: function () {
+      if (this.type == "skill") {
+        return "1fr 6fr 0fr";
+      } else {
+        return "1fr 6fr 1fr";
+      }
+    },
+    card_overlay_art: function () {
+      return require(`~/assets/images/${this.type}_overlay.png`);
     },
     changed: function () {
       return this.card.status == "chg" || this.card.status == "rev";
@@ -242,5 +249,12 @@ export default {
   bottom: 0px;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.5);
+}
+#card_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
 }
 </style>
