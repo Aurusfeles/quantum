@@ -1,13 +1,9 @@
 <template>
-  <div>
+  <div id="container">
+    <div v-if="show_status" id="card_status" :style="{color:status.color}">{{status[language]}}</div>
     <div id="quantum_card" :style="{'grid-template-columns':grid_template_columns}">
       <img :src="card_overlay_art" alt="card overlay" id="card_overlay" />
-      <div id="card_header">
-        <div id="card_title">{{card.name}}</div>
-        <div v-if="show_status" id="card_status">
-          <span id="card_status_text" :style="{color:status.color}">{{status[language]}}</span>
-        </div>
-      </div>
+      <div id="card_title" :style="{'height': title_height}">{{card.name}}</div>
       <div id="card_art" :style="{ backgroundImage: `url(${card_art})` }">
         <div id="playtesting" v-if="card.playtesting">{{translate("playtesting")}}</div>
         <div id="card_notes" v-if="card.notes">
@@ -48,11 +44,10 @@ export default {
   },
   computed: {
     grid_template_columns: function () {
-      if (this.type == "skill") {
-        return "1fr 6fr 0fr";
-      } else {
-        return "1fr 6fr 1fr";
-      }
+      return this.type == "skill" ? "1fr 6fr 0fr" : "1fr 6fr 1fr";
+    },
+    title_height: function () {
+      return this.type == "skill" ? "1,5em" : "3em";
     },
     card_overlay_art: function () {
       return require(`~/assets/images/${this.type}_overlay.png`);
@@ -96,6 +91,25 @@ export default {
 };
 </script>
 <style scoped>
+#container {
+  position: relative;
+}
+
+#card_status {
+  position: absolute;
+  right: 1em;
+  top: 0.5em;
+  font-size: small;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+  background-color: #282828;
+  border-radius: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  z-index: 10;
+}
+
 #quantum_card {
   position: relative;
   display: grid;
@@ -123,22 +137,13 @@ export default {
   overflow: hidden;
 }
 
-#card_edge {
-  background-size: 100% 100%;
-  grid-column: 1;
-  grid-row: 1 / 4;
-}
-
-#card_header {
-  display: flex;
-  width: 100%;
+#card_title {
+  padding: 0.2em;
   grid-column: 2;
   grid-row: 1;
-}
-#card_title {
-  margin-left: 15px;
-  align-self: flex-start;
-  font-size: x-large;
+  width: 100%;
+  text-align: center;
+  font-size: large;
   font-weight: bold;
   text-transform: uppercase;
   color: white;
@@ -150,20 +155,6 @@ export default {
   position: relative;
   grid-column: 2;
   grid-row: 2;
-}
-
-#card_status {
-  margin-left: auto;
-  align-self: center;
-  font-size: small;
-  padding-right: 1em;
-  font-weight: bold;
-}
-
-#card_status_text {
-  font-style: italic;
-  color: white;
-  text-transform: uppercase;
 }
 
 #card_text {
@@ -254,7 +245,7 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 10;
+  z-index: 5;
   pointer-events: none;
 }
 </style>
