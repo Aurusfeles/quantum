@@ -13,7 +13,7 @@
       ></QuantumCard>
     </div>
     <div class="text_content" v-html="removed_skill_cards_text"></div>
-    <div class="card_list">      
+    <div class="card_list">
       <QuantumCard
         v-for="(skill,index) in removed_skills"
         :key="index"
@@ -73,7 +73,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 body {
   background-color: white;
 }

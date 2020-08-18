@@ -105,6 +105,9 @@ export default {
 #navbar {
   position: sticky;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -113,12 +116,16 @@ export default {
 }
 
 #link_tab {
-  margin-left: 2em;
+  flex: 1 0 auto;
   align-self: center;
+  display: flex;
+  justify-content: space-evenly;
 }
 #language_tab {
-  margin-left: auto;
-  margin-right: 20px;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-start;
 }
 
 .language_button {
@@ -128,12 +135,13 @@ export default {
 }
 
 .link {
+  flex: 0 0 auto;
   font-size: large;
   color: #282828;
   text-decoration: none;
   padding: 0.2em;
-  margin-left: 1em;
-  margin-right: 1em;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -144,8 +152,26 @@ export default {
   border-radius: 1em;
 }
 #logo {
-  height: 80px;
+  height: 5em;
+  width: auto;
   margin: 0.4em 1em;
+}
+
+@media all and (max-width: 1024px) {
+  #logo {
+    width: 10em;
+    height: auto;
+  }
+
+  #navbar {
+    position: unset;
+  }
+
+  #link_tab {
+    order: 1;
+    width: 100%;
+    flex-direction: column;
+  }
 }
 </style>
 

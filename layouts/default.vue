@@ -26,14 +26,33 @@ html {
   box-sizing: border-box;
 }
 
-*{
-  box-sizing: border-box;  
+body {
+  margin: 0px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 a {
   color: darkblue;
   text-decoration: none;
   font-weight: bold;
+}
+
+.text_content {
+  margin-left: auto;
+  margin-right: auto;
+  overflow-wrap: break-all;
+  width: 745px;
+}
+
+@media all and (max-width: 800px) {
+  .text_content {
+    margin-left: 1em;
+    margin-right: 1em;
+    width: auto;
+  }
 }
 </style>
 

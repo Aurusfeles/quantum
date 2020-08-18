@@ -143,13 +143,13 @@ export const quantum_card_tactics = [
             "name": "Expansion",
             "status": "rm",
             "text": "Immediately roll an expansion ship and put it in orbital position on a planet with one of your quantum cubes or in your scrapyard.",
-            "notes": "The fleet expansion ability as a Tactic is odd. This ability should scale with the number of players, but it has a fixed number in the deck. In low player counts you can get flooded with Expansion cards you can't use, and in high player counts, it's difficult to expand when you want to. Expansion is just one path to victory, but it is over-represented in the Tactic deck. We feel moving it to it's own separate deck fixes these issues. [See Rules for Expansion Deck](https://github.com/stolksdorf/quantum/blob/master/New%20Rules.md#fleet-expansion-deck)."
+            "notes": "The fleet expansion ability as a Tactic is odd. This ability should scale with the number of players, but it has a fixed number in the deck. In low player counts you can get flooded with Expansion cards you can't use, and in high player counts, it's difficult to expand when you want to. Expansion is just one path to victory, but it is over-represented in the Tactic deck. We feel moving it to it's own separate deck fixes these issues. See Rules for Expansion Deck."
         },
         "fr": {
             "name": "Expansion",
             "status": "rm",
             "text": "Vous ajoutez un vaisseau à votre flotte, soit en position orbitale autour d'une planète comportant un de vos cubes, soit dans la casse.",
-            "notes": "La capacité d'expansion de flotte en tant que Tactique est étrange. Cette capacité devrait s'ajuster avec le nombre de joueur, mais il y en a un nombre fixe dans le deck. Avec peu de joueurs on se retrouve submergé avec les cartes Expansion inutilisables, et avec beaucoup de joueurs il est difficile de s'agrandir quand on le souhaite. Expansion est seulement une voie possible vers la victoire, mais elle est surreprésentée dans le deck des Tactiques. Nous pensons que les déplacer dans leur propre deck séparé règle ces problèmes. [Voir règle sur le deck Expansion](https://github.com/stolksdorf/quantum/blob/master/New%20Rules.md#fleet-expansion-deck)."
+            "notes": "La capacité d'expansion de flotte en tant que Tactique est étrange. Cette capacité devrait s'ajuster avec le nombre de joueur, mais il y en a un nombre fixe dans le deck. Avec peu de joueurs on se retrouve submergé avec les cartes Expansion inutilisables, et avec beaucoup de joueurs il est difficile de s'agrandir quand on le souhaite. Expansion est seulement une voie possible vers la victoire, mais elle est surreprésentée dans le deck des Tactiques. Nous pensons que les déplacer dans leur propre deck séparé règle ces problèmes. Voir règle sur le deck Expansion."
         }
     },
     {

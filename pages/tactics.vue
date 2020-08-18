@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="text_content" v-html="new_tactic_cards_text"></div>
+    <div class="text_content" v-html="new_tactic_cards_text"></div>
     <div class="card_list">
       <QuantumCard
         v-for="(tactic,index) in tactics"
@@ -13,7 +13,7 @@
       ></QuantumCard>
     </div>
     <div class="text_content" v-html="removed_tactic_cards_text"></div>
-    <div class="card_list">      
+    <div class="card_list">
       <QuantumCard
         v-for="(tactic,index) in removed_tactics"
         :key="index"
@@ -59,7 +59,7 @@ export default {
     tactics: function () {
       return quantum_card_tactics.filter(
         (tactic) => tactic[this.language].status != "rm"
-      );      
+      );
     },
     removed_tactics: function () {
       return quantum_card_tactics.filter(
@@ -73,7 +73,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 body {
   background-color: white;
 }
@@ -81,10 +81,5 @@ body {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-}
-#text_content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 745px;
 }
 </style>

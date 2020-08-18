@@ -1,6 +1,6 @@
 
 <template>
-  <div id="content" v-html="content"></div>
+  <div class="text_content" v-html="content"></div>
 </template>
 
 <script>
