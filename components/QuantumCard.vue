@@ -3,9 +3,12 @@
     <div v-if="show_status" id="card_status" :style="{color:status.color}">{{status[language]}}</div>
     <div id="quantum_card" :style="{'grid-template-columns':grid_template_columns}">
       <img :src="card_overlay_art" alt="card overlay" id="card_overlay" />
-      <div id="card_title" :style="{'height': title_height}">{{card.name}}</div>
+      <div id="card_top" :style="{'height': title_height}">
+        <div id="card_title">{{card.name}}</div>
+      </div>
       <div id="card_art" :style="{ backgroundImage: `url(${card_art})` }">
-        <div id="playtesting" v-if="card.playtesting">{{translate("playtesting")}}</div>
+        <div id="playtesting" v-if="card.playtesting&&!revert_changes">{{translate("playtesting")}}</div>
+        <div id="original" v-if="revert_changes">{{"("+translate("original")+")"}}</div>
         <div id="card_notes" v-if="card.notes">
           <div id="notes_text">
             <div style="margin:1em;">{{card.notes}}</div>
@@ -17,9 +20,11 @@
           id="original_tag"
           @mouseover="revert_changes=true"
           @mouseleave="revert_changes=false"
-        >{{translate("original")}}</div>
+        >{{translate("see_original")}}</div>
       </div>
-      <div id="card_text">{{card.text}}</div>
+      <div id="card_bottom">
+        <div id="card_text">{{card.text}}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -136,11 +141,15 @@ export default {
   background-size: 8px 8px;
   overflow: hidden;
 }
-
-#card_title {
-  padding: 0.2em;
+#card_top {
   grid-column: 2;
   grid-row: 1;
+  display: flex;
+}
+#card_title {
+  padding: 0.2em;
+  align-self: center;
+  text-align: center;
   width: 100%;
   text-align: center;
   font-size: large;
@@ -156,17 +165,23 @@ export default {
   grid-column: 2;
   grid-row: 2;
 }
+#card_bottom {
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+}
 
 #card_text {
   text-align: center;
-  padding: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
   font-size: small;
   line-height: 1.25;
-  /*font-weight: 400;*/
+  align-self: center;
   color: white;
   width: 100%;
-  grid-column: 2;
-  grid-row: 3;
 }
 
 #card_notes {
@@ -241,6 +256,19 @@ export default {
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+#original {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: x-large;
+  color: black;
+  bottom: 0px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 #card_overlay {
   position: absolute;
   width: 100%;

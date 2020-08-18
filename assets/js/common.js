@@ -36,9 +36,13 @@ export const quantum_card_display_texts = {
         en: "see notes",
         fr: "voir notes"
     },
-    original: {
+    see_original: {
         en: "see original",
         fr: "voir originale"
+    },
+    original: {
+        en: "original",
+        fr: "originale"
     },
     playtesting: {
         en: "🚧playtesting🚧",

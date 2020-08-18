@@ -50,7 +50,7 @@ If a player selects a card in the third position (farthest from the deck), they 
 You may spend a Missile to change any player's combat roll to a 1. You may spend missiles at any time. Missiles may be traded between players. Each player starts the game with a missile.
 
 
-> This new rule is trying to solve two problems. Many times winning or losing the game comes down to a single die roll. A good player will not hinge their strategy on one risky move, but try to spread out the risk through several potential strategies and backup plans. Still, you can get hit with bad luck and lose the game due to 3 subpar rolls in a row. Missiles attempt to reduce that bad RNG feeling in a very limited way. It provides each player with a small window of control that they get to choose exactly when to use it. We've intetionally made Missiles rare for this reason. Secondly, it provides a resource in the game to trade and make deals with, which will hopefully open up some interesting decision space for players.
+> This new rule is trying to solve two problems. Many times winning or losing the game comes down to a single die roll. A good player will not hinge their strategy on one risky move, but try to spread out the risk through several potential strategies and backup plans. Still, you can get hit with bad luck and lose the game due to 3 subpar rolls in a row. Missiles attempt to reduce that bad RNG feeling in a very limited way. Firstly, it provides each player with a small window of control that they get to choose exactly when to use it. We've intentionally made Missiles rare for this reason. Secondly, it provides a resource in the game to trade and make deals with, which will hopefully open up some interesting decision space for players.
 
 
 

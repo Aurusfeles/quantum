@@ -36,9 +36,9 @@ Au début du jeu, chaque joueur pioche secrètement deux cartes Compétence. Ils
 
 
 #### Aperçu de carte
-Les cartes face visible devant les pioches de Compétences et de Tactiques respectent maintenant un ordre d'apparition: plus une carte est proche de la pioche, plus elle est récente. Lorsqu'une carte est prise, les cartes restantes sont décalées pour laisser place à une nouvelle carte de la pioche.
+Les cartes face visible devant les pioches de Compétences et de Tactiques respectent maintenant un ordre d'apparition: plus une carte est proche de la pioche, plus elle est récente. Lorsqu'une carte est prise, les cartes restantes sont décalées pour laisser place à une nouvelle carte de la pioche, placée près de celle-ci.
 
-Si un joueur choisit de prendre la carte en troisième position (la plus éloignée de la pioche, et donc la plus ancienne), il peut également regarder la prochaine carte de la pioche pour la choisir à la place.
+Si un joueur choisit de prendre la carte en troisième position (la plus éloignée de la pioche, et donc la plus ancienne), il peut également regarder la prochaine carte de la pioche pour la choisir à la place. S'il choisit de prendre la carte de la pioche, il remet la 3ème carte à sa place en fin de rangée. S'il choisit de prendre la troisième carte, les cartes restantes sont décalées et la carte de la pioche est placée en début de rangée.
 
 > Dans Quantum, avoir des cartes qui prennent la poussière est un problème régulier et frustrant. Ceci est actuellement notre meilleure approche pour corriger cela. Cela donne un léger bonus aux cartes boudées en permettant au joueur d'avoir en plus un aperçu de la carte du dessus de la pioche.
 
