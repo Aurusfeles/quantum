@@ -47,10 +47,13 @@ export default {
     return {
       revert_changes: false,
       printing_style: {
+        "border-style": "dashed",
+        "border-color": "grey",
+        "border-width": "1px",
         "border-radius": "0px",
         "box-shadow": "0px 0px 0px white",
-        "margin-top": "1px",
-        "margin-left": "1px",
+        "margin-top": "0px",
+        "margin-left": "0px",
         width: "88mm",
         height: "63mm",
       },
@@ -141,8 +144,6 @@ export default {
   display: grid;
   grid-template-rows: 2fr 10fr 6fr;
   grid-template-columns: 1fr 6fr;
-  border: 1px;
-  border-color: lightslategray;
   border-radius: 15px;
   box-shadow: 5px 5px 5px lightslategray;
   margin-top: 1em;
@@ -177,6 +178,7 @@ export default {
   font-weight: bold;
   text-transform: uppercase;
   color: white;
+  color-adjust: exact;
 }
 
 #card_art {
@@ -202,6 +204,7 @@ export default {
   line-height: 1.25;
   align-self: center;
   color: white;
+  color-adjust: exact;
   width: 100%;
 }
 
@@ -212,6 +215,7 @@ export default {
   top: 0px;
   left: 0px;
   color: white;
+  color-adjust: exact;
   z-index: 2;
   width: 30%;
 }
@@ -228,6 +232,7 @@ export default {
 
 #notes_text {
   color: white;
+  color-adjust: exact;
   height: 0;
   max-height: 15em;
   width: 100%;
@@ -254,6 +259,7 @@ export default {
   top: 0px;
   right: 0px;
   color: white;
+  color-adjust: exact;
   z-index: 1;
   width: 35%;
   text-align: right;
@@ -273,6 +279,7 @@ export default {
   text-transform: uppercase;
   font-size: x-large;
   color: yellow;
+  color-adjust: exact;
   bottom: 0px;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.5);
@@ -296,5 +303,16 @@ export default {
   height: 100%;
   z-index: 5;
   pointer-events: none;
+}
+
+/* next setting is to get correct font color (white) while printing wit firefox
+  but it doesn't work  */
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    printer-colors: exact !important;
+    color-adjust: exact !important;
+  }
 }
 </style>

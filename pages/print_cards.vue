@@ -29,6 +29,7 @@
 import { quantum_card_skills } from "~/assets/js/skills.js";
 import { quantum_card_tactics } from "~/assets/js/tactics.js";
 export default {
+  layout: "print",
   head() {
     return {
       title: "Skills",
