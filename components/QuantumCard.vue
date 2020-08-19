@@ -1,22 +1,29 @@
 <template>
   <div id="container">
-    <div v-if="show_status" id="card_status" :style="{color:status.color}">{{status[language]}}</div>
-    <div id="quantum_card" :style="{'grid-template-columns':grid_template_columns}">
+    <div
+      v-if="!use_printing_style"
+      id="card_status"
+      :style="{color:status.color}"
+    >{{status[language]}}</div>
+    <div id="quantum_card" :style="card_style">
       <img :src="card_overlay_art" alt="card overlay" id="card_overlay" />
       <div id="card_top" :style="{'height': title_height}">
         <div id="card_title">{{card.name}}</div>
       </div>
       <div id="card_art" :style="{ backgroundImage: `url(${card_art})` }">
-        <div id="playtesting" v-if="card.playtesting&&!revert_changes">{{translate("playtesting")}}</div>
+        <div
+          id="playtesting"
+          v-if="card.playtesting&&!revert_changes&&!use_printing_style"
+        >{{translate("playtesting")}}</div>
         <div id="original" v-if="revert_changes">{{"("+translate("original")+")"}}</div>
-        <div id="card_notes" v-if="card.notes">
+        <div id="card_notes" v-if="card.notes&&!use_printing_style">
           <div id="notes_text">
             <div style="margin:1em;">{{card.notes}}</div>
           </div>
           <div id="notes_tag">{{translate("notes")}}</div>
         </div>
         <div
-          v-if="changed"
+          v-if="changed&&!use_printing_style"
           id="original_tag"
           @mouseover="revert_changes=true"
           @mouseleave="revert_changes=false"
@@ -39,17 +46,30 @@ export default {
   data: function () {
     return {
       revert_changes: false,
+      printing_style: {
+        "border-radius": "0px",
+        "box-shadow": "0px 0px 0px white",
+        "margin-top": "1px",
+        "margin-left": "1px",
+        width: "88mm",
+        height: "63mm",
+      },
     };
   },
   props: {
     card_info: Object,
     apply_changes_by_default: Boolean,
-    show_status: Boolean,
+    use_printing_style: Boolean,
     type: String,
   },
   computed: {
-    grid_template_columns: function () {
-      return this.type == "skill" ? "1fr 6fr 0fr" : "1fr 6fr 1fr";
+    card_style: function () {
+      let card_style = this.use_printing_style
+        ? { ...this.printing_style }
+        : {};
+      card_style["gridTemplateColumns"] =
+        this.type == "skill" ? "1fr 6fr 0fr" : "1fr 6fr 1fr";
+      return card_style;
     },
     title_height: function () {
       return this.type == "skill" ? "1,5em" : "3em";
@@ -98,6 +118,7 @@ export default {
 <style scoped>
 #container {
   position: relative;
+  display: inline-block;
 }
 
 #card_status {

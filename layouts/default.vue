@@ -28,6 +28,7 @@ html {
 
 body {
   margin: 0px;
+  background-color: white;
 }
 
 * {
