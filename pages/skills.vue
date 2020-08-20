@@ -7,8 +7,6 @@
         :key="index"
         :card_info="skill"
         :language="language"
-        :apply_changes_by_default="true"
-        :use_printing_style="false"
         type="skill"
       ></QuantumCard>
     </div>
@@ -19,8 +17,6 @@
         :key="index"
         :card_info="skill"
         :language="language"
-        :apply_changes_by_default="true"
-        :use_printing_style="false"
         type="skill"
       ></QuantumCard>
     </div>

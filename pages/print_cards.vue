@@ -1,26 +1,50 @@
 <template>
   <div>
-    <div class="card_list">
-      <QuantumCard
-        v-for="(skill,index) in skills"
-        :key="index"
-        :card_info="skill"
-        :language="language"
-        :apply_changes_by_default="true"
-        :use_printing_style="true"
-        type="skill"
-      ></QuantumCard>
+    <div id="printing_options">
+      <label for="card_art">Include card arts</label>
+      <input type="checkbox" v-model="arts" id="card_art" checked />
+
+      <p>Background</p>
+      <input type="radio" v-model="background" value="black" id="background_black" />
+      <label for="background_black">black</label>
+      <input type="radio" v-model="background" value="white" id="background_white" checked />
+      <label for="background_white">White</label>
+
+      <p>Cards</p>
+      <input type="radio" v-model="card_list" value="all" id="list_all" checked />
+      <label for="list_all">All</label>
+      <input type="radio" v-model="card_list" value="skills" id="list_skills" />
+      <label for="list_skills">Skills</label>
+      <input type="radio" v-model="card_list" value="tactics" id="list_tactics" />
+      <label for="list_tactics">Tactics</label>
     </div>
-    <div class="card_list">
-      <QuantumCard
-        v-for="(tactic,index) in tactics"
-        :key="index"
-        :card_info="tactic"
-        :language="language"
-        :apply_changes_by_default="true"
-        :use_printing_style="true"
-        type="tactic"
-      ></QuantumCard>
+    <div id="cards">
+      <div class="card_list" v-if="card_list!='tactics'">
+        <QuantumCard
+          v-for="(skill,index) in skills"
+          :key="index"
+          :card_info="skill"
+          :language="language"
+          :apply_changes_by_default="true"
+          :use_printing_style="true"
+          :background="background"
+          :show_art="arts"
+          type="skill"
+        ></QuantumCard>
+      </div>
+      <div class="card_list" v-if="card_list!='skills'">
+        <QuantumCard
+          v-for="(tactic,index) in tactics"
+          :key="index"
+          :card_info="tactic"
+          :language="language"
+          :apply_changes_by_default="true"
+          :use_printing_style="true"
+          :background="background"
+          :show_art="arts"
+          type="tactic"
+        ></QuantumCard>
+      </div>
     </div>
   </div>
 </template>
@@ -30,20 +54,12 @@ import { quantum_card_skills } from "~/assets/js/skills.js";
 import { quantum_card_tactics } from "~/assets/js/tactics.js";
 export default {
   layout: "print",
-  head() {
-    return {
-      title: "Skills",
-      link: [
-        /*{
-          rel: "stylesheet",
-          href: "https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-        }*/
-      ],
-    };
-  },
   data: function () {
     return {
       language: "fr",
+      arts: true,
+      background: "black",
+      card_list: "all",
     };
   },
 
@@ -58,9 +74,6 @@ export default {
         (tactic) => tactic[this.language].status != "rm"
       );
     },
-  },
-  mounted: function () {
-    this.$store.commit("changeActivePage", this.$route.path);
   },
 };
 </script>

@@ -5,9 +5,9 @@
       id="card_status"
       :style="{color:status.color}"
     >{{status[language]}}</div>
-    <div id="quantum_card" :style="card_style">
+    <div :class="quantum_card_class">
       <img :src="card_overlay_art" alt="card overlay" id="card_overlay" />
-      <div id="card_top" :style="{'height': title_height}">
+      <div id="card_top">
         <div id="card_title">{{card.name}}</div>
       </div>
       <div id="card_art" :style="{ backgroundImage: `url(${card_art})` }">
@@ -46,36 +46,38 @@ export default {
   data: function () {
     return {
       revert_changes: false,
-      printing_style: {
-        "border-style": "dashed",
-        "border-color": "grey",
-        "border-width": "1px",
-        "border-radius": "0px",
-        "box-shadow": "0px 0px 0px white",
-        "margin-top": "0px",
-        "margin-left": "0px",
-        width: "88mm",
-        height: "63mm",
-      },
     };
   },
   props: {
     card_info: Object,
-    apply_changes_by_default: Boolean,
-    use_printing_style: Boolean,
+    apply_changes_by_default: {
+      type: Boolean,
+      default: true,
+    },
+    use_printing_style: {
+      type: Boolean,
+      default: false,
+    },
     type: String,
+    show_art: {
+      type: Boolean,
+      default: true,
+    },
+    background: {
+      type: String,
+      default: "black",
+    },
   },
   computed: {
-    card_style: function () {
-      let card_style = this.use_printing_style
-        ? { ...this.printing_style }
-        : {};
-      card_style["gridTemplateColumns"] =
-        this.type == "skill" ? "1fr 6fr 0fr" : "1fr 6fr 1fr";
-      return card_style;
-    },
-    title_height: function () {
-      return this.type == "skill" ? "1,5em" : "3em";
+    quantum_card_class: function () {
+      let card_class = {};
+      card_class["dark_background"] = this.background == "black";
+      card_class["light_background"] = this.background == "white";
+      card_class["tactic"] = this.type == "tactic";
+      card_class["skill"] = this.type == "skill";
+      card_class["quantum_card_print"] = this.use_printing_style;
+      card_class["quantum_card_screen"] = !this.use_printing_style;
+      return card_class;
     },
     card_overlay_art: function () {
       return require(`~/assets/images/${this.type}_overlay.png`);
@@ -139,17 +141,30 @@ export default {
   z-index: 10;
 }
 
-#quantum_card {
+.quantum_card_screen {
   position: relative;
-  display: grid;
-  grid-template-rows: 2fr 10fr 6fr;
-  grid-template-columns: 1fr 6fr;
+  overflow: hidden;
   border-radius: 15px;
   box-shadow: 5px 5px 5px lightslategray;
   margin-top: 1em;
   margin-left: 1em;
   width: 22em;
   height: 16em;
+}
+
+.quantum_card_print {
+  position: relative;
+  overflow: hidden;
+  border-style: dashed;
+  border-color: grey;
+  border-width: 1px;
+  margin-top: 0px;
+  margin-left: 0px;
+  width: 88mm;
+  height: 63mm;
+}
+
+.dark_background {
   background-image: linear-gradient(
     0deg,
     #151520 25%,
@@ -161,13 +176,51 @@ export default {
     #202030 100%
   );
   background-size: 8px 8px;
-  overflow: hidden;
+  color: white;
+  color-adjust: exact;
 }
+
+.light_background {
+  background-image: linear-gradient(
+    0deg,
+    #f7f7f7 25%,
+    #ffffff 25%,
+    #ffffff 50%,
+    #f7f7f7 50%,
+    #f7f7f7 75%,
+    #ffffff 75%,
+    #ffffff 100%
+  );
+  background-size: 8px 8px;
+  color: rgb(0, 0, 0);
+  color-adjust: exact;
+}
+
+.tactic {
+  display: grid;
+  grid-template-rows: 2fr 10fr 6fr;
+  grid-template-columns: 1fr 6fr 1fr;
+}
+
+.skill {
+  display: grid;
+  grid-template-rows: 2fr 10fr 6fr;
+  grid-template-columns: 1fr 6fr;
+}
+
 #card_top {
   grid-column: 2;
   grid-row: 1;
   display: flex;
 }
+.skill #card_top {
+  height: 1.5 em;
+}
+
+.tactic #card_top {
+  height: 3em;
+}
+
 #card_title {
   padding: 0.2em;
   align-self: center;
@@ -177,8 +230,6 @@ export default {
   font-size: large;
   font-weight: bold;
   text-transform: uppercase;
-  color: white;
-  color-adjust: exact;
 }
 
 #card_art {
@@ -203,8 +254,7 @@ export default {
   font-size: small;
   line-height: 1.25;
   align-self: center;
-  color: white;
-  color-adjust: exact;
+
   width: 100%;
 }
 
@@ -214,8 +264,7 @@ export default {
   font-style: italic;
   top: 0px;
   left: 0px;
-  color: white;
-  color-adjust: exact;
+
   z-index: 2;
   width: 30%;
 }
@@ -231,8 +280,6 @@ export default {
 }
 
 #notes_text {
-  color: white;
-  color-adjust: exact;
   height: 0;
   max-height: 15em;
   width: 100%;
@@ -258,8 +305,7 @@ export default {
   font-style: italic;
   top: 0px;
   right: 0px;
-  color: white;
-  color-adjust: exact;
+
   z-index: 1;
   width: 35%;
   text-align: right;

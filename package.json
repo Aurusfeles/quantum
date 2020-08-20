@@ -16,7 +16,8 @@
     "@nuxt/markdown": "0.0.21",
     "@nuxtjs/axios": "^5.11.0",
     "frontmatter-markdown-loader": "^3.6.0",
-    "nuxt": "^2.13.0"
+    "nuxt": "^2.13.0",
+    "puppeteer": "^5.2.1"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
