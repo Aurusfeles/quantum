@@ -47,6 +47,14 @@ export const quantum_card_display_texts = {
     playtesting: {
         en: "🚧playtesting🚧",
         fr: "🚧en cours de test🚧"
+    },
+    skill: {
+        en: "skill",
+        fr: "compétence"
+    },
+    tactic: {
+        en: "tactic",
+        fr: "tactique"
     }
 
 }

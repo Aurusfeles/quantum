@@ -6,6 +6,7 @@
       :style="{color:status.color}"
     >{{status[language]}}</div>
     <div :class="quantum_card_class">
+      <div class="edge">{{translate(type)}}</div>
       <img v-if="show_art" :src="card_overlay_art" alt="card overlay" class="card_overlay" />
       <div class="card_top">
         <div class="card_title">{{card.name}}</div>
@@ -211,7 +212,12 @@ export default {
 }
 
 .no_art {
-  grid-template-rows: 2fr 0fr 16fr;
+  grid-template-rows: 6fr 0fr 12fr;
+  grid-template-columns: 1fr 6fr;
+}
+
+.no_art .card_title {
+  font-size: x-large;
 }
 
 .card_top {
@@ -230,7 +236,6 @@ export default {
 .card_title {
   padding: 0.2em;
   align-self: center;
-  text-align: center;
   width: 100%;
   text-align: center;
   font-size: large;
@@ -361,6 +366,19 @@ export default {
 .card_art {
   width: 100%;
   height: 100%;
+}
+
+.edge {
+  align-self: center;
+  width: 100%;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  padding: 0.5em;
+  grid-column: 1;
+  grid-row: 1/4;
 }
 
 /* next setting is to get correct font color (white) while printing wit firefox
