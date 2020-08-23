@@ -74,6 +74,9 @@ export default {
       );
     },
   },
+  mounted: function () {
+    this.$store.commit("changeActivePage", this.$route.path);
+  },
 };
 </script>
 

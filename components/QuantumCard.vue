@@ -1,36 +1,37 @@
 <template>
-  <div id="container">
+  <div class="container">
     <div
       v-if="!use_printing_style"
-      id="card_status"
+      class="card_status"
       :style="{color:status.color}"
     >{{status[language]}}</div>
     <div :class="quantum_card_class">
-      <img :src="card_overlay_art" alt="card overlay" id="card_overlay" />
-      <div id="card_top">
-        <div id="card_title">{{card.name}}</div>
+      <img v-if="show_art" :src="card_overlay_art" alt="card overlay" class="card_overlay" />
+      <div class="card_top">
+        <div class="card_title">{{card.name}}</div>
       </div>
-      <div id="card_art" :style="{ backgroundImage: `url(${card_art})` }">
+      <div class="card_middle">
+        <img v-if="show_art" class="card_art" :src="card_art" />
         <div
-          id="playtesting"
+          class="playtesting"
           v-if="card.playtesting&&!revert_changes&&!use_printing_style"
         >{{translate("playtesting")}}</div>
-        <div id="original" v-if="revert_changes">{{"("+translate("original")+")"}}</div>
-        <div id="card_notes" v-if="card.notes&&!use_printing_style">
-          <div id="notes_text">
+        <div class="original" v-if="revert_changes">{{"("+translate("original")+")"}}</div>
+        <div class="card_notes" v-if="card.notes&&!use_printing_style">
+          <div class="notes_text">
             <div style="margin:1em;">{{card.notes}}</div>
           </div>
-          <div id="notes_tag">{{translate("notes")}}</div>
+          <div class="notes_tag">{{translate("notes")}}</div>
         </div>
         <div
           v-if="changed&&!use_printing_style"
-          id="original_tag"
+          class="original_tag"
           @mouseover="revert_changes=true"
           @mouseleave="revert_changes=false"
         >{{translate("see_original")}}</div>
       </div>
-      <div id="card_bottom">
-        <div id="card_text">{{card.text}}</div>
+      <div class="card_bottom">
+        <div class="card_text">{{card.text}}</div>
       </div>
     </div>
   </div>
@@ -75,6 +76,7 @@ export default {
       card_class["light_background"] = this.background == "white";
       card_class["tactic"] = this.type == "tactic";
       card_class["skill"] = this.type == "skill";
+      card_class["no_art"] = !this.show_art;
       card_class["quantum_card_print"] = this.use_printing_style;
       card_class["quantum_card_screen"] = !this.use_printing_style;
       return card_class;
@@ -121,12 +123,12 @@ export default {
 };
 </script>
 <style scoped>
-#container {
+.container {
   position: relative;
   display: inline-block;
 }
 
-#card_status {
+.card_status {
   position: absolute;
   right: 1em;
   top: 0.5em;
@@ -208,20 +210,24 @@ export default {
   grid-template-columns: 1fr 6fr;
 }
 
-#card_top {
+.no_art {
+  grid-template-rows: 2fr 0fr 16fr;
+}
+
+.card_top {
   grid-column: 2;
   grid-row: 1;
   display: flex;
 }
-.skill #card_top {
+.skill .card_top {
   height: 1.5 em;
 }
 
-.tactic #card_top {
+.tactic .card_top {
   height: 3em;
 }
 
-#card_title {
+.card_title {
   padding: 0.2em;
   align-self: center;
   text-align: center;
@@ -232,20 +238,21 @@ export default {
   text-transform: uppercase;
 }
 
-#card_art {
+.card_middle {
   width: 100%;
   background-size: cover;
   position: relative;
   grid-column: 2;
   grid-row: 2;
 }
-#card_bottom {
+
+.card_bottom {
   grid-column: 2;
   grid-row: 3;
   display: flex;
 }
 
-#card_text {
+.card_text {
   text-align: center;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -258,7 +265,7 @@ export default {
   width: 100%;
 }
 
-#card_notes {
+.card_notes {
   position: absolute;
   font-size: smaller;
   font-style: italic;
@@ -268,18 +275,18 @@ export default {
   z-index: 2;
   width: 30%;
 }
-#card_notes:hover {
+.card_notes:hover {
   width: 100%;
 }
 
-#notes_tag {
+.notes_tag {
   padding-left: 0.5em;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   border-radius: 0px 0px 15px 0px;
 }
 
-#notes_text {
+.notes_text {
   height: 0;
   max-height: 15em;
   width: 100%;
@@ -290,16 +297,16 @@ export default {
   /*transition: all 0.5s ease-out;*/
 }
 
-#card_notes:hover > #notes_text {
+.card_notes:hover > .notes_text {
   height: auto;
   border-radius: 0px 0px 15px 0px;
 }
 
-#card_notes:hover > #notes_tag {
+.card_notes:hover > .notes_tag {
   display: none;
 }
 
-#original_tag {
+.original_tag {
   position: absolute;
   font-size: smaller;
   font-style: italic;
@@ -314,11 +321,11 @@ export default {
   border-radius: 0px 0px 0px 15px;
 }
 
-#original_tag:hover {
+.original_tag:hover {
   background-color: rgba(100, 100, 100, 0.5);
 }
 
-#playtesting {
+.playtesting {
   position: absolute;
   width: 100%;
   text-align: center;
@@ -331,7 +338,7 @@ export default {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-#original {
+.original {
   position: absolute;
   width: 100%;
   text-align: center;
@@ -343,12 +350,17 @@ export default {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-#card_overlay {
+.card_overlay {
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: 5;
   pointer-events: none;
+}
+
+.card_art {
+  width: 100%;
+  height: 100%;
 }
 
 /* next setting is to get correct font color (white) while printing wit firefox
