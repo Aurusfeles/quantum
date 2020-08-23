@@ -353,12 +353,12 @@ export default {
 
 /* next setting is to get correct font color (white) while printing wit firefox
   but it doesn't work  */
-
+/*
 @media print {
   * {
     -webkit-print-color-adjust: exact;
     printer-colors: exact !important;
     color-adjust: exact !important;
   }
-}
+}*/
 </style>

@@ -61,11 +61,18 @@ export default {
             fr: "Cartes Compétence",
           },
         },
-        tacticss: {
+        tactics: {
           route: "/tactics",
           caption: {
             en: "Tactic cards",
             fr: "Cartes Tactique",
+          },
+        },
+        print: {
+          route: "/print_cards",
+          caption: {
+            en: "Print",
+            fr: "Imprimer",
           },
         },
       },
@@ -171,6 +178,12 @@ export default {
     order: 1;
     width: 100%;
     flex-direction: column;
+  }
+}
+
+@media print {
+  #navbar {
+    display: none;
   }
 }
 </style>

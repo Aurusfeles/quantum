@@ -53,7 +53,6 @@
 import { quantum_card_skills } from "~/assets/js/skills.js";
 import { quantum_card_tactics } from "~/assets/js/tactics.js";
 export default {
-  layout: "print",
   data: function () {
     return {
       language: "fr",
@@ -79,7 +78,9 @@ export default {
 </script>
 
 <style scoped>
-body {
-  background-color: white;
+@media print {
+  #printing_options {
+    display: none;
+  }
 }
 </style>
