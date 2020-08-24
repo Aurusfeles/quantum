@@ -166,8 +166,7 @@ export default {
   border-style: dashed;
   border-color: grey;
   border-width: 1px;
-  margin-top: 0px;
-  margin-left: 0px;
+  margin: 0px;
   width: 88mm;
   height: 63mm;
 }
@@ -216,19 +215,21 @@ export default {
 
 .card_top {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .skill .card_top {
-  height: 1.5 em;
+  flex: 1 0 10%;
 }
 
 .tactic .card_top {
-  height: 3em;
+  flex: 1 0 20%;
 }
 
 .card_title {
   padding: 0.2em;
   width: 100%;
-  height: 100%;
   text-align: center;
   font-size: large;
   font-weight: bold;
@@ -239,12 +240,20 @@ export default {
   width: 100%;
   background-size: cover;
   position: relative;
-  flex: 0 1 100%;
+  flex: 0 1 50%;
   min-width: 0;
+  overflow: hidden;
+}
+
+.no_art .card_middle {
+  display: none;
 }
 
 .card_bottom {
   flex: 1 0 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .card_text {
@@ -256,7 +265,6 @@ export default {
   font-size: small;
   line-height: 1.25;
   align-self: center;
-
   width: 100%;
 }
 
@@ -266,12 +274,12 @@ export default {
   font-style: italic;
   top: 0px;
   left: 0px;
-
   z-index: 2;
   width: 30%;
 }
 .card_notes:hover {
   width: 100%;
+  height: 100%;
 }
 
 .notes_tag {
@@ -293,7 +301,7 @@ export default {
 }
 
 .card_notes:hover > .notes_text {
-  height: auto;
+  height: 100%;
   border-radius: 0px 0px 15px 0px;
 }
 
@@ -363,7 +371,11 @@ export default {
 }
 
 .tactic .card_body {
-  flex-basis: 76%;
+  flex-basis: 73%;
+}
+
+.no_art .card_body {
+  flex-basis: 86%;
 }
 
 .edge {
@@ -379,7 +391,7 @@ export default {
 }
 
 .no_art .edge.left {
-  background-color: rgba(131, 131, 131, 0.1);
+  background-color: rgba(125, 125, 125, 0.06);
 }
 .no_art .edge.right {
   display: none;
@@ -389,7 +401,7 @@ export default {
 }
 
 .no_art .card_text {
-  font-size: unset;
+  font-size: medium;
 }
 
 /* next setting is to get correct font color (white) while printing wit firefox

@@ -29,6 +29,7 @@ html {
 body {
   margin: 0px;
   background-color: white;
+  padding-bottom: 10em;
 }
 
 * {

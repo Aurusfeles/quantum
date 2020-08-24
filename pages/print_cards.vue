@@ -1,22 +1,27 @@
 <template>
   <div>
     <div id="printing_options">
-      <label for="card_art">Include card arts</label>
-      <input type="checkbox" v-model="arts" id="card_art" checked />
+      <p>
+        <label for="card_art">Include card arts:</label>
+        <input type="checkbox" v-model="arts" id="card_art" checked />
+      </p>
+      <p>
+        Background:
+        <input type="radio" v-model="background" value="black" id="background_black" />
+        <label for="background_black">black</label>
+        <input type="radio" v-model="background" value="white" id="background_white" checked />
+        <label for="background_white">White</label>
+      </p>
 
-      <p>Background</p>
-      <input type="radio" v-model="background" value="black" id="background_black" />
-      <label for="background_black">black</label>
-      <input type="radio" v-model="background" value="white" id="background_white" checked />
-      <label for="background_white">White</label>
-
-      <p>Cards</p>
-      <input type="radio" v-model="card_list" value="all" id="list_all" checked />
-      <label for="list_all">All</label>
-      <input type="radio" v-model="card_list" value="skills" id="list_skills" />
-      <label for="list_skills">Skills</label>
-      <input type="radio" v-model="card_list" value="tactics" id="list_tactics" />
-      <label for="list_tactics">Tactics</label>
+      <p>
+        Cards:
+        <input type="radio" v-model="card_list" value="all" id="list_all" checked />
+        <label for="list_all">All</label>
+        <input type="radio" v-model="card_list" value="skills" id="list_skills" />
+        <label for="list_skills">Skills</label>
+        <input type="radio" v-model="card_list" value="tactics" id="list_tactics" />
+        <label for="list_tactics">Tactics</label>
+      </p>
     </div>
     <div id="cards">
       <div class="card_list" v-if="card_list!='tactics'">
@@ -81,6 +86,18 @@ export default {
 </script>
 
 <style scoped>
+#printing_options {
+  margin: 2em;
+}
+
+p {
+  padding: 0.5em;
+}
+
+.card_list {
+  font-size: 0; /* to prevent white space between card rows */
+}
+
 @media print {
   #printing_options {
     display: none;
