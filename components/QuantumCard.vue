@@ -5,35 +5,38 @@
       class="card_status"
       :style="{color:status.color}"
     >{{status[language]}}</div>
-    <div :class="quantum_card_class">
-      <div class="edge">{{translate(type)}}</div>
+    <div class="quantum_card" :class="quantum_card_class">
       <img v-if="show_art" :src="card_overlay_art" alt="card overlay" class="card_overlay" />
-      <div class="card_top">
-        <div class="card_title">{{card.name}}</div>
-      </div>
-      <div class="card_middle">
-        <img v-if="show_art" class="card_art" :src="card_art" />
-        <div
-          class="playtesting"
-          v-if="card.playtesting&&!revert_changes&&!use_printing_style"
-        >{{translate("playtesting")}}</div>
-        <div class="original" v-if="revert_changes">{{"("+translate("original")+")"}}</div>
-        <div class="card_notes" v-if="card.notes&&!use_printing_style">
-          <div class="notes_text">
-            <div style="margin:1em;">{{card.notes}}</div>
-          </div>
-          <div class="notes_tag">{{translate("notes")}}</div>
+      <div class="edge left">{{translate(type)}}</div>
+      <div class="card_body">
+        <div class="card_top">
+          <div class="card_title">{{card.name}}</div>
         </div>
-        <div
-          v-if="changed&&!use_printing_style"
-          class="original_tag"
-          @mouseover="revert_changes=true"
-          @mouseleave="revert_changes=false"
-        >{{translate("see_original")}}</div>
+        <div class="card_middle">
+          <img v-if="show_art" class="card_art" :src="card_art" />
+          <div
+            class="playtesting"
+            v-if="card.playtesting&&!revert_changes&&!use_printing_style"
+          >{{translate("playtesting")}}</div>
+          <div class="original" v-if="revert_changes">{{"("+translate("original")+")"}}</div>
+          <div class="card_notes" v-if="card.notes&&!use_printing_style">
+            <div class="notes_text">
+              <div style="margin:1em;">{{card.notes}}</div>
+            </div>
+            <div class="notes_tag">{{translate("notes")}}</div>
+          </div>
+          <div
+            v-if="changed&&!use_printing_style"
+            class="original_tag"
+            @mouseover="revert_changes=true"
+            @mouseleave="revert_changes=false"
+          >{{translate("see_original")}}</div>
+        </div>
+        <div class="card_bottom">
+          <div class="card_text">{{card.text}}</div>
+        </div>
       </div>
-      <div class="card_bottom">
-        <div class="card_text">{{card.text}}</div>
-      </div>
+      <div class="edge right">{{translate(type)}}</div>
     </div>
   </div>
 </template>
@@ -144,9 +147,13 @@ export default {
   z-index: 10;
 }
 
-.quantum_card_screen {
+.quantum_card {
+  display: flex;
   position: relative;
   overflow: hidden;
+}
+
+.quantum_card_screen {
   border-radius: 15px;
   box-shadow: 5px 5px 5px lightslategray;
   margin-top: 1em;
@@ -156,8 +163,6 @@ export default {
 }
 
 .quantum_card_print {
-  position: relative;
-  overflow: hidden;
   border-style: dashed;
   border-color: grey;
   border-width: 1px;
@@ -199,21 +204,10 @@ export default {
   color-adjust: exact;
 }
 
-.tactic {
-  display: grid;
-  grid-template-rows: 2fr 10fr 6fr;
-  grid-template-columns: 1fr 6fr 1fr;
-}
-
-.skill {
-  display: grid;
-  grid-template-rows: 2fr 10fr 6fr;
-  grid-template-columns: 1fr 6fr;
-}
-
-.no_art {
-  grid-template-rows: 6fr 0fr 12fr;
-  grid-template-columns: 1fr 6fr;
+.card_body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .no_art .card_title {
@@ -221,9 +215,7 @@ export default {
 }
 
 .card_top {
-  grid-column: 2;
-  grid-row: 1;
-  display: flex;
+  flex-grow: 1;
 }
 .skill .card_top {
   height: 1.5 em;
@@ -235,8 +227,8 @@ export default {
 
 .card_title {
   padding: 0.2em;
-  align-self: center;
   width: 100%;
+  height: 100%;
   text-align: center;
   font-size: large;
   font-weight: bold;
@@ -247,14 +239,12 @@ export default {
   width: 100%;
   background-size: cover;
   position: relative;
-  grid-column: 2;
-  grid-row: 2;
+  flex: 0 1 100%;
+  min-width: 0;
 }
 
 .card_bottom {
-  grid-column: 2;
-  grid-row: 3;
-  display: flex;
+  flex: 1 0 25%;
 }
 
 .card_text {
@@ -365,20 +355,41 @@ export default {
 
 .card_art {
   width: 100%;
-  height: 100%;
+  height: auto;
+}
+
+.skill .card_body {
+  flex-basis: 86%;
+}
+
+.tactic .card_body {
+  flex-basis: 76%;
 }
 
 .edge {
+  flex-grow: 1;
   align-self: center;
-  width: 100%;
+  height: 100%;
   text-align: center;
   font-size: large;
   font-weight: bold;
   text-transform: uppercase;
   writing-mode: vertical-rl;
   padding: 0.5em;
-  grid-column: 1;
-  grid-row: 1/4;
+}
+
+.no_art .edge.left {
+  background-color: rgba(131, 131, 131, 0.1);
+}
+.no_art .edge.right {
+  display: none;
+}
+.skill .edge.right {
+  display: none;
+}
+
+.no_art .card_text {
+  font-size: unset;
 }
 
 /* next setting is to get correct font color (white) while printing wit firefox
