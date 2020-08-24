@@ -22,6 +22,7 @@
         <input type="radio" v-model="card_list" value="tactics" id="list_tactics" />
         <label for="list_tactics">Tactics</label>
       </p>
+      <input type="button" value="Print the cards!" @click="print" />
     </div>
     <div id="cards">
       <div class="card_list" v-if="card_list!='tactics'">
@@ -81,6 +82,11 @@ export default {
   },
   mounted: function () {
     this.$store.commit("changeActivePage", this.$route.path);
+  },
+  methods: {
+    print: function () {
+      print();
+    },
   },
 };
 </script>
