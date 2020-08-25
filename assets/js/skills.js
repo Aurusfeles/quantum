@@ -366,7 +366,7 @@ export const quantum_card_skills = [
         "type": "res",
         "art": "brilliant",
         "fr": {
-            "name": "Brilliant",
+            "name": "Brillant",
 
             "status": "rev",
             "text": "Ajoutez +2 au dé de recherche au début de votre tour.",
@@ -375,7 +375,7 @@ export const quantum_card_skills = [
             }
         },
         "en": {
-            "name": "Brillant",
+            "name": "Brilliant",
             "status": "rev",
             "text": "Add 2 to your research automatically at the start of your turn.",
             "changes": {

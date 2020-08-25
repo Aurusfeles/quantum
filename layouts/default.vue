@@ -42,6 +42,10 @@ a {
   font-weight: bold;
 }
 
+blockquote {
+  font-style: italic;
+}
+
 .text_content {
   margin-left: auto;
   margin-right: auto;
