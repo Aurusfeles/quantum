@@ -26,7 +26,7 @@ Les explications pour chaque nouvelle méchanique sont listées dessous.
 #### Pioche de Cartes d'Expansion de Flotte
 En complément des pioches de Compétences et de Tactiques, il y a maintenant une pioche d'Expansions. La pioche contient plusieurs exemplaires d'une seule carte: l'ancienne carte de Tactique Expansion. Lorsqu'un joueur doit prendre une carte, il peut choisir parmi les 3 pioches. Le nombre de cartes dans la pioche Expansion est égal au nombre de joueurs plus un.
 
-> L'expansion de flotte en tant que carte Tactique est un choix étrange. Cette capacité devraitThis ability should scale with the number of players, but it has a fixed number in the deck. In low player counts you can get flooded with Expansion cards you can't use, and vice versa in high player counts. Expansion is just one path to victory, but it is over-represented in the Tactic deck. We feel moving it to it's own deck fixes these issues.
+> L'expansion de flotte en tant que carte Tactique est un choix étrange. Cette capacité devrait suivre le nombre le joueurs, mais il y en a un nombre fixe dans la pioche. Deux joueurs peuvent être envahis par des cartes Expansion qu'ils ne peuvent pas utiliser, et inversement à 4 joueurs. L'Expansion est juste un moyen parmi d'autres d'atteindre la victoire, mais elle est surreprésentée dans la pioche de Tactiques. Nous pensons que déplacer ces cartes dans leur propre pioche règle le problème.
 
 
 #### Compétence de départ
@@ -57,11 +57,11 @@ Vous pouvez défausser un Missile en votre possession pour changer le résultat 
 
 ## Nouvelle mise en place
 
-1. Choisissez une configuration de carte et assemblez la.
+1. Choisissez une configuration de plateau et assemblez la.
 1. Mélangez la pioche de Compétences
 1. **Chaque joueur**
-    1. Prend une plateau d'aide de jeu, 7 dés, 1 Missile, et le nombre de marqueurs de Conquête requis pour cette carte.
-    1. Pioche 2 cartes de Compétence, en choisit une et place l'autre sous la pioche de Compétences.
+    1. Prend une plateau d'aide de jeu, 7 dés, 1 Missile, et le nombre de marqueurs de Conquête requis pour la configuration de plateau.
+    1. Pioche 2 cartes Compétence, en choisit une et place l'autre sous la pioche de Compétences.
     1. Place un de ses marqueurs de Conquête sur sa planète de départ
     1. Place un dé sur son emplacement Recherche et un dé sur son emplacement Domination, chacun positionné à 1.
     1. Place 2 de ses dés dans la Réserve de son plateau d'aide de jeu.
@@ -73,12 +73,6 @@ Vous pouvez défausser un Missile en votre possession pour changer le résultat 
 
 
 > Un simple résumé de la mise en route du jeu avec les nouveaux termes et mécaniques.
-
-
-
-
-
-
 
 ## Nouveau déroulement du tour
 

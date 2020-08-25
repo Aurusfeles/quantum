@@ -375,7 +375,7 @@ export const quantum_card_skills = [
             }
         },
         "en": {
-            "name": "Brilliant",
+            "name": "Brillant",
             "status": "rev",
             "text": "Add 2 to your research automatically at the start of your turn.",
             "changes": {
