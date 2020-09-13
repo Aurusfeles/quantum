@@ -2,6 +2,16 @@
   <div>
     <TheNavBar />
     <Nuxt />
+    <footer>
+      <p>
+        Concept:
+        <a href="https://github.com/stolksdorf">stolksdorf</a>
+      </p>
+      <p>
+        Website:
+        <a href="https://github.com/aurusfeles">aurusfeles</a>
+      </p>
+    </footer>
   </div>
 </template>
 <script>
@@ -29,7 +39,6 @@ html {
 body {
   margin: 0px;
   background-color: white;
-  padding-bottom: 10em;
 }
 
 * {
@@ -51,6 +60,15 @@ blockquote {
   margin-right: auto;
   overflow-wrap: break-all;
   width: 745px;
+}
+
+footer {
+  background-color: lavender;
+  font-style: italic;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5em;
 }
 
 @media all and (max-width: 800px) {
